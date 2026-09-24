@@ -1,3 +1,4 @@
+feature/tienda
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
 
 :root {
@@ -119,3 +120,126 @@ body::before {
   border-color: var(--yellow-accent);
   box-shadow: 0 0 0 0.25rem rgba(245, 158, 11, 0.25);
 }
+=======
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+
+:root {
+  --green-primary: #1b4332;
+  --green-medium: #2d6a4f;
+  --green-light: #d8f3dc;
+  --yellow-accent: #f59e0b;
+  --yellow-hover: #d97706;
+  --bg-body: #f4f7f4;
+  --text-dark: #1b2e1b;
+  --text-muted: #52634f;
+}
+
+body {
+  background-color: var(--bg-body);
+  color: var(--text-dark);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  min-height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60vw;
+  height: 60vh;
+  background-image: url('../img/logo.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.06;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.navbar-green {
+  background-color: var(--green-primary) !important;
+  border-bottom: 3px solid var(--yellow-accent);
+}
+
+.brand-text {
+  color: var(--yellow-accent) !important;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.btn-yellow {
+  background-color: var(--yellow-accent);
+  color: #1b4332;
+  font-weight: 700;
+  border: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.25);
+}
+
+.btn-yellow:hover {
+  background-color: var(--yellow-hover);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(245, 158, 11, 0.35);
+}
+
+.product-card {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(45, 106, 79, 0.15);
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--green-medium);
+  box-shadow: 0 12px 24px rgba(27, 67, 50, 0.12);
+}
+
+.card-img-top {
+  height: 190px;
+  object-fit: cover;
+}
+
+.badge-origen {
+  background-color: var(--green-primary);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.badge-yellow {
+  background-color: var(--yellow-accent);
+  color: #1b4332;
+  font-weight: 700;
+}
+
+.price-text {
+  color: var(--green-medium);
+  font-weight: 800;
+}
+
+.table-custom {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.table-custom th {
+  background-color: var(--green-primary);
+  color: #ffffff;
+}
+
+.form-control-custom {
+  border: 1px solid var(--green-medium);
+}
+
+.form-control-custom:focus {
+  border-color: var(--yellow-accent);
+  box-shadow: 0 0 0 0.25rem rgba(245, 158, 11, 0.25);
+}
+main
