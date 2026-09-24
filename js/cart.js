@@ -6,9 +6,12 @@ function verificarSesion() {
 
   if (usuario) {
     var nombre = typeof usuario === 'object' ? (usuario.nombre || usuario.email) : usuario;
+    
+    var nombreMayus = nombre.charAt(0).toUpperCase() + nombre.slice(1);
+
     container.innerHTML = `
       <div class="d-flex align-items-center gap-2">
-        <span class="text-white small fw-bold">Hola, ${nombre}</span>
+        <span class="text-white small fw-bold">Hola, ${nombreMayus}</span>
         <button type="button" class="btn btn-outline-light btn-sm rounded-pill px-2 py-1" onclick="cerrarSesion()">Salir</button>
       </div>
     `;
@@ -20,7 +23,6 @@ function verificarSesion() {
     `;
   }
 }
-
 function iniciarSesion(event) {
   event.preventDefault();
   
