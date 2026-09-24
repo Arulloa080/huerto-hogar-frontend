@@ -47,6 +47,11 @@ body::before {
   letter-spacing: -0.5px;
 }
 
+.logo-img {
+  max-height: 40px;
+  width: auto;
+}
+
 .btn-yellow {
   background-color: var(--yellow-accent);
   color: #1b4332;
@@ -100,6 +105,10 @@ body::before {
   font-weight: 800;
 }
 
+.text-emerald {
+  color: #2e8b57;
+}
+
 .table-custom {
   background: rgba(255, 255, 255, 0.9);
   border-radius: 12px;
@@ -120,6 +129,42 @@ body::before {
   box-shadow: 0 0 0 0.25rem rgba(245, 158, 11, 0.25);
 }
 
+.cart-img-thumb {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.cart-qty-input {
+  max-width: 80px;
+}
+
+.summary-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  border: 1px solid rgba(45, 106, 79, 0.15);
+}
+/* Clases de apoyo para reemplazar estilos en línea */
+.text-error {
+  color: #dc3545;
+  font-size: 0.8em;
+  display: block;
+}
+
 .text-emerald {
-  color: #2e8b57;
+  color: var(--green-medium, #2d6a4f);
+  font-weight: 700;
+}
+
+.max-w-750 {
+  max-width: 750px;
+}
+
+.max-w-800 {
+  max-width: 800px;
+}
+
+.min-vh-100 {
+  min-height: 100vh;
 }
