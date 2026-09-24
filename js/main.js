@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const productsContainer = document.getElementById('products-container');
   const categoryFilters = document.getElementById('category-filters');
 
-  // Inventario completo oficial HuertoHogar
+  // Inventario completo oficial HuertoHogar con imágenes locales de /img
   const productos = [
     // Frutas Frescas
     {
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
       precio: 1200,
       unidad: 'kilo',
       descripcion: 'Manzanas Fuji crujientes y dulces, cultivadas en el Valle del Maule.',
-      imagen: 'https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=500&q=80'
+      imagen: 'img/manzanas.jpg'
     },
     {
       id: 'FR002',
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
       precio: 1000,
       unidad: 'kilo',
       descripcion: 'Jugosas y ricas en vitamina C, ideales para zumos frescos y refrescantes.',
-      imagen: 'https://images.unsplash.com/photo-1611080626919-7cf5a9dbab5b?w=500&q=80'
+      imagen: 'img/naranjas.jpg'
     },
     {
       id: 'FR003',
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
       precio: 1100,
       unidad: 'kilo',
       descripcion: 'Plátanos maduros, dulces y cremosos, ricos en potasio.',
-      imagen: 'https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=500&q=80'
+      imagen: 'img/platanos.jpg'
     },
     // Verduras Orgánicas
     {
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
       precio: 900,
       unidad: 'kilo',
       descripcion: 'Zanahorias crujientes cultivadas sin pesticidas en la Región de O\'Higgins.',
-      imagen: 'https://images.unsplash.com/photo-1598170845058-12ef4a457939?w=500&q=80'
+      imagen: 'img/zanahorias.jpg'
     },
     {
       id: 'VR002',
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
       precio: 850,
       unidad: 'atado',
       descripcion: 'Hojas seleccionadas de espinaca, ricas en hierro y nutrientes.',
-      imagen: 'https://images.unsplash.com/photo-1576045057995-568f588f82fb?w=500&q=80'
+      imagen: 'img/espinacas.jpg'
     },
     {
       id: 'VR003',
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
       precio: 1500,
       unidad: 'malla 3 un',
       descripcion: 'Pimientos rojos, verdes y amarillos frescos de cultivo hidropónico.',
-      imagen: 'https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?w=500&q=80'
+      imagen: 'img/pimientos.jpg'
     },
     // Productos Orgánicos
     {
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
       precio: 5000,
       unidad: 'frasco 500g',
       descripcion: 'Miel pura y orgánica producida por apicultores locales.',
-      imagen: 'https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=500&q=80'
+      imagen: 'img/miel.jpg'
     },
     {
       id: 'PO003',
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
       precio: 3200,
       unidad: 'bolsa 500g',
       descripcion: 'Grano ancestral andino rico en proteínas, libre de gluten.',
-      imagen: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=500&q=80'
+      imagen: 'img/quinua.jpg'
     },
     // Productos Lácteos
     {
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
       precio: 1100,
       unidad: 'litro',
       descripcion: 'Leche fresca de libre pastoreo, pasteurizada en origen.',
-      imagen: 'https://images.unsplash.com/photo-1563636619-e9143da7973b?w=500&q=80'
+      imagen: 'img/leche.jpg'
     }
   ];
 
@@ -110,7 +110,15 @@ document.addEventListener('DOMContentLoaded', () => {
       img.src = prod.imagen;
       img.className = 'card-img-top product-img';
       img.alt = prod.nombre;
-      img.onerror = () => { img.src = `https://via.placeholder.com/300x200?text=${encodeURIComponent(prod.nombre)}`; };
+      
+      // Fallback a extensión .png o placeholder si el archivo varía
+      img.onerror = () => { 
+        if (img.src.endsWith('.jpg')) {
+          img.src = prod.imagen.replace('.jpg', '.png');
+        } else {
+          img.src = `https://via.placeholder.com/300x200?text=${encodeURIComponent(prod.nombre)}`;
+        }
+      };
 
       const cardBody = document.createElement('div');
       cardBody.className = 'card-body d-flex flex-column';
@@ -203,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     localStorage.setItem('carrito', JSON.stringify(carrito));
-    alert(`${prod.nombre} agregado al carrito`);
+    alert(`${prod.nombre} fue añadido al carrito`);
   }
 
   setupFiltros();
