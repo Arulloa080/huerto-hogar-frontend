@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HuertoHogar - Productos Orgánicos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=2">
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-green sticky-top">
+    <div class="container py-1">
+      <a class="navbar-brand fs-3 brand-text" href="index.html">HuertoHogar</a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center gap-2">
+          <li class="nav-item"><a class="nav-link text-white fw-semibold active" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link text-white-50 fw-semibold" href="nosotros.html">Nosotros</a></li>
+          <li class="nav-item ms-lg-2">
+            <a href="carrito.html" class="btn btn-yellow rounded-pill px-4">
+              Carrito <span id="cart-count" class="badge badge-origen rounded-circle ms-1">0</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="py-5 text-center my-3">
+    <div class="container" style="max-width: 750px;">
+      <h1 class="display-4 fw-bold text-dark mb-3">Sabor y frescura <span style="color: var(--green-medium);">de origen local</span></h1>
+      <p class="text-muted fs-5">Llevamos los mejores productos del campo directo a la puerta de tu hogar.</p>
+    </div>
+  </header>
+
+  <main class="container flex-grow-1 pb-5">
+    <h3 class="fw-bold mb-4" style="color: var(--green-primary);">Nuestros Productos</h3>
+    <div class="row g-4" id="home-products"></div>
+  </main>
+
+  <footer class="bg-white text-center py-4 border-top mt-auto">
+    <p class="text-muted small mb-0">&copy; 2026 HuertoHogar. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/productos.js"></script>
+</body>
+</html>
