@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
       precio: 1200,
       unidad: 'kilo',
       descripcion: 'Manzanas Fuji crujientes y dulces, cultivadas en el Valle del Maule.',
-      imagen: 'img/manzanas.jpg'
+      imagen: 'img/manzana.jpg'
     },
     {
       id: 'FR002',
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
       precio: 1000,
       unidad: 'kilo',
       descripcion: 'Jugosas y ricas en vitamina C, ideales para zumos frescos y refrescantes.',
-      imagen: 'img/naranjas.jpg'
+      imagen: 'img/naranja.jpg'
     },
     {
       id: 'FR003',
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
       precio: 1100,
       unidad: 'kilo',
       descripcion: 'Plátanos maduros, dulces y cremosos, ricos en potasio.',
-      imagen: 'img/platanos.jpg'
+      imagen: 'img/platano.jpg'
     },
     {
       id: 'VR001',
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
       precio: 900,
       unidad: 'kilo',
       descripcion: 'Zanahorias crujientes cultivadas sin pesticidas en la Región de O\'Higgins.',
-      imagen: 'img/zanahorias.jpg'
+      imagen: 'img/zanahoria.jpg'
     },
     {
       id: 'VR002',
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
       precio: 850,
       unidad: 'atado',
       descripcion: 'Hojas seleccionadas de espinaca, ricas en hierro y nutrientes.',
-      imagen: 'img/espinacas.jpg'
+      imagen: 'img/espinaca.jpg'
     },
     {
       id: 'VR003',
