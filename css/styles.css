@@ -1,135 +1,86 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
 
 :root {
-  --green-primary: #1b4332;
+  --bg-light: #F7F7F7;
+  --green-primary: #2E8B57;
   --green-medium: #2d6a4f;
-  --green-light: #d8f3dc;
-  --yellow-accent: #f59e0b;
-  --yellow-hover: #d97706;
-  --bg-body: #f4f7f4;
-  --text-dark: #1b2e1b;
-  --text-muted: #52634f;
+  --yellow-accent: #FFD700;
+  --text-dark: #333333;
+  --text-secondary: #666666;
 }
 
 body {
-  background-color: var(--bg-body);
+  background-color: var(--bg-light);
   color: var(--text-dark);
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  min-height: 100vh;
-  position: relative;
+  font-family: 'Montserrat', sans-serif;
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 60vw;
-  height: 60vh;
-  background-image: url('../img/logo.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  opacity: 0.06;
-  z-index: -1;
-  pointer-events: none;
+h1, h2, h3, h4, .brand-text {
+  font-family: 'Playfair Display', serif;
 }
 
 .navbar-green {
-  background-color: var(--green-primary) !important;
-  border-bottom: 3px solid var(--yellow-accent);
+  background-color: var(--green-primary);
 }
 
-.brand-text {
-  color: var(--yellow-accent) !important;
-  font-weight: 800;
-  letter-spacing: -0.5px;
+.logo-img {
+  width: 35px;
+  height: 35px;
 }
 
 .btn-yellow {
   background-color: var(--yellow-accent);
-  color: #1b4332;
-  font-weight: 700;
+  color: var(--text-dark);
+  font-weight: 600;
   border: none;
-  transition: all 0.25s ease;
-  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.25);
 }
 
 .btn-yellow:hover {
-  background-color: var(--yellow-hover);
-  color: #ffffff;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(245, 158, 11, 0.35);
+  background-color: #e6c200;
+  color: var(--text-dark);
 }
 
-.product-card {
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(45, 106, 79, 0.15);
-  border-radius: 16px;
-  backdrop-filter: blur(8px);
-  transition: all 0.3s ease;
-  overflow: hidden;
-}
-
-.product-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--green-medium);
-  box-shadow: 0 12px 24px rgba(27, 67, 50, 0.12);
-}
-
-.card-img-top {
-  height: 190px;
-  object-fit: cover;
-}
-
-.badge-origen {
-  background-color: var(--green-primary);
-  color: #ffffff;
-  font-weight: 600;
-}
-
-.badge-yellow {
-  background-color: var(--yellow-accent);
-  color: #1b4332;
-  font-weight: 700;
-}
-
-.price-text {
-  color: var(--green-medium);
-  font-weight: 800;
-}
-
-.table-custom {
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.table-custom th {
-  background-color: var(--green-primary);
-  color: #ffffff;
-}
-
-.form-control-custom {
-  border: 1px solid var(--green-medium);
-}
-
-.form-control-custom:focus {
-  border-color: var(--yellow-accent);
-  box-shadow: 0 0 0 0.25rem rgba(245, 158, 11, 0.25);
-}
-
-.bg-emerald-custom {
-  background-color: #246b43;
-  color: white;
+.text-error {
+  color: #dc3545;
+  font-size: 0.8em;
+  display: block;
 }
 
 .text-emerald {
-  color: #2e8b57;
+  color: var(--green-primary);
+  font-weight: 700;
 }
 
+<<<<<<< HEAD
 .card-img-top {
   height: 190px;
+=======
+.max-w-750 {
+  max-width: 750px;
+}
+
+.max-w-800 {
+  max-width: 800px;
+}
+
+.min-vh-100 {
+  min-height: 100vh;
+}
+
+.map-container {
+  width: 100%;
+  height: 400px;
+  border: 0;
+  border-radius: 8px;
+}
+
+.product-img {
+  height: 200px;
+>>>>>>> origin/main
+  object-fit: cover;
+}
+
+.product-img {
+  height: 200px;
   object-fit: cover;
 }
