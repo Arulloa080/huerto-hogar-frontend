@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
       precio: 1200,
       unidad: 'kilo',
       descripcion: 'Manzanas Fuji crujientes y dulces, cultivadas en el Valle del Maule.',
-      imagen: 'img/manzana.jpg'
+      imagen: 'img/manzanas.jpg'
     },
     {
       id: 'FR002',
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
       precio: 1000,
       unidad: 'kilo',
       descripcion: 'Jugosas y ricas en vitamina C, ideales para zumos frescos y refrescantes.',
-      imagen: 'img/naranja.jpg'
+      imagen: 'img/naranjas.jpg'
     },
     {
       id: 'FR003',
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
       precio: 1100,
       unidad: 'kilo',
       descripcion: 'Plátanos maduros, dulces y cremosos, ricos en potasio.',
-      imagen: 'img/platano.jpg'
+      imagen: 'img/platanos.jpg'
     },
     {
       id: 'VR001',
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
       precio: 900,
       unidad: 'kilo',
       descripcion: 'Zanahorias crujientes cultivadas sin pesticidas en la Región de O\'Higgins.',
-      imagen: 'img/zanahoria.jpg'
+      imagen: 'img/zanahorias.jpg'
     },
     {
       id: 'VR002',
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
       precio: 850,
       unidad: 'atado',
       descripcion: 'Hojas seleccionadas de espinaca, ricas en hierro y nutrientes.',
-      imagen: 'img/espinaca.jpg'
+      imagen: 'img/espinacas.jpg'
     },
     {
       id: 'VR003',
@@ -142,7 +142,6 @@ document.addEventListener('DOMContentLoaded', () => {
       price.className = 'fw-bold text-emerald mb-3';
       price.textContent = `$${prod.precio.toLocaleString('es-CL')} / ${prod.unidad}`;
 
-      // Control de cantidad y botón Agregar
       const actionDiv = document.createElement('div');
       actionDiv.className = 'd-flex align-items-center gap-2';
 
@@ -215,7 +214,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     localStorage.setItem('carrito', JSON.stringify(carrito));
-    alert(`${cantidad} x ${prod.nombre} fue(ron) añadido(s) al carrito`);
+    if (typeof updateCartBadge === 'function') updateCartBadge();
+
+    // Actualizar texto y mostrar la notificación flotante (Toast)
+    const toastName = document.getElementById('toast-product-name');
+    if (toastName) {
+      toastName.textContent = `${cantidad} x ${prod.nombre}`;
+    }
+
+    const toastEl = document.getElementById('cartToast');
+    if (toastEl) {
+      const toast = new bootstrap.Toast(toastEl, { delay: 4000 });
+      toast.show();
+    }
   }
 
   setupFiltros();
