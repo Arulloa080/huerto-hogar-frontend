@@ -47,8 +47,8 @@
                 </div>
 
                 <!-- Alerta de stock critico de productos-->
-                <div class="alert alert-warning d-flex align-items-center" role="alert">
-                    <span class="fs-4 me-2"></span>
+                <div id="alertaStockCritico" class="alert alert-warning d-flex align-items-center" role="alert" style="display: none;">
+                    <span class="fs-4 me-2">⚠️</span>
                     <div>
                         <strong>Atención:</strong> Hay productos con stock igual o inferior al stock crítico.
                     </div>
@@ -67,30 +67,9 @@
                                 <th>Acciones</th>
                             </tr>
                         </thead>
-                        <tbody id="tablaProductos">
+                        <tbody id="cuerpoTablaProductos">
                             <!-- codigo de prueba: Eliminar fila estática cuando se integre Js -->
-                            <tr>
-                                <td>P001</td>
-                                <td>Tomates Orgánicos</td>
-                                <td>Verduras</td>
-                                <td>$1.500</td>
-                                <td><span class="badge bg-success">50</span></td>
-                                <td>
-                                    <button class="btn btn-sm btn-warning">Editar</button>
-                                    <button class="btn btn-sm btn-danger">Eliminar</button>
-                                </td>
-                            </tr>
-                            <tr class="table-danger"> <!-- Ejemplo para ver stock critico -->
-                                <td>P002</td>
-                                <td>Lechuga Hidropónica</td>
-                                <td>Verduras</td>
-                                <td>$800</td>
-                                <td><span class="badge bg-danger">2</span></td>
-                                <td>
-                                    <button class="btn btn-sm btn-warning">Editar</button>
-                                    <button class="btn btn-sm btn-danger">Eliminar</button>
-                                </td>
-                            </tr>
+                            
                         </tbody>
                     </table>
                 </section>
@@ -178,5 +157,6 @@
 
     <!-- Bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/admin-productos.js"></script>
 </body>
 </html>
