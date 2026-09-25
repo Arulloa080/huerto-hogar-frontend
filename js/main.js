@@ -49,8 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (usuarioGuardado && usuarioGuardado.correo === correoLogin.value && usuarioGuardado.password === passLogin.value) {
                 errorCorreoLogin.className = "mensaje-exito";
                 errorCorreoLogin.textContent = "¡Inicio de sesión correcto! Bienvenido.";
-                // Si la Integrante 1 ya tiene el index, puedes descomentar la siguiente línea:
-                // window.location.href = "index.html";
+                window.location.href = "index.html";
             } else {
                 errorCorreoLogin.className = "mensaje-error";
                 errorCorreoLogin.textContent = "Credenciales incorrectas o usuario no registrado.";

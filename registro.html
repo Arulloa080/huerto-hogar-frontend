@@ -17,66 +17,38 @@
         </nav>
     </header>
 
-    <main>
-        <section class="contenedor-formulario">
-            <h2>Crea tu cuenta en Huerto Hogar</h2>
-            <form id="formRegistro">
-                
-                <div class="grupo-input">
-                    <label for="runReg">RUN (Sin puntos ni guion):</label>
-                    <input type="text" id="runReg" autocomplete="off" placeholder="19011022K" required>
-                </div>
+    <main class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-body p-5">
+                    <h2 class="text-center mb-4">Crea tu Cuenta</h2>
+                    
+                    <form id="formRegistro">
+                        <!-- Campo de Correo -->
+                        <div class="mb-3">
+                            <label for="correoReg" class="form-label">Correo Electrónico:</label>
+                            <input type="email" id="correoReg" class="form-control" placeholder="ejemplo@duoc.cl">
+                            <span id="errorCorreoReg" class="mensaje-error"></span>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="passReg" class="form-label">Contraseña:</label>
+                            <input type="password" id="passReg" class="form-control" placeholder="Entre 4 y 10 caracteres">
+                            <span id="errorPassReg" class="mensaje-error"></span>
+                        </div>
+                        
+                        <div class="d-grid gap-2 mt-4">
+                            <button type="button" id="btnRegistro" class="btn btn-success" disabled>Registrarse</button>
+                        </div>
+                    </form>
 
-                <div class="grupo-input">
-                    <label for="nombreReg">Nombres:</label>
-                    <input type="text" id="nombreReg" autocomplete="given-name" maxlength="50" required>
                 </div>
-
-                <div class="grupo-input">
-                    <label for="apellidoReg">Apellidos:</label>
-                    <input type="text" id="apellidoReg" autocomplete="family-name" maxlength="100" required>
-                </div>
-
-                <div class="grupo-input">
-                    <label for="fechaNacReg">Fecha de Nacimiento:</label>
-                    <input type="date" id="fechaNacReg" autocomplete="bday">
-                </div>
-
-                <div class="grupo-input">
-                    <label for="correoReg">Correo Institucional o Gmail:</label>
-                    <input type="email" id="correoReg" autocomplete="email" maxlength="100" required>
-                    <span id="errorCorreoReg" class ="mensaje-error"></span>
-                </div>
-
-                <div class="grupo-input">
-                    <label for="regionReg">Región:</label>
-                    <select id="regionReg" required>
-                        <option value="">Seleccione una región...</option>
-                    </select>
-                </div>
-
-                <div class="grupo-input">
-                    <label for="comunaReg">Comuna:</label>
-                    <select id="comunaReg" required>
-                        <option value="">Seleccione una comuna...</option>
-                    </select>
-                </div>
-
-                <div class="grupo-input">
-                    <label for="direccionReg">Dirección:</label>
-                    <input type="text" id="direccionReg" autocomplete="street-address" maxlength="300" required>
-                </div>
-
-                <div class="grupo-input">
-                    <label for="passReg">Contraseña:</label>
-                    <input type="password" id="passReg" autocomplete="new-password" placeholder="Entre 4 y 10 caracteres" required>
-                    <span id="errorPassReg" class ="mensaje-error"></span>
-                </div>
-
-                <button type="submit" id="btnRegistro" disabled>Registrarse</button>
-            </form>
-        </section>
-    </main>
+            </div>
+            <p class="text-center mt-3 text-muted">¿Ya eres parte de Huerto Hogar? <a href="login.html" class="text-success text-decoration-none fw-bold">Inicia sesión aquí</a></p>
+        </div>
+    </div>
+</main>
 
     <footer>
         <p>Huerto Hogar - Conectando familias con el campo chileno de forma sostenible.</p>
