@@ -213,5 +213,5 @@ document.addEventListener('DOMContentLoaded', function () {
     aplicarValidacionEmail();
     aplicarLimiteCaracteres();
 
-    console.log('✅ Validaciones de HuertoHogar cargadas correctamente');
+    console.log(' Validaciones de HuertoHogar cargadas correctamente');
 });
