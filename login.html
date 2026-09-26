@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HuertoHogar - Iniciar Sesión</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-green shadow-sm">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2 brand-text" href="index.html">
+        <img src="img/logo.png" alt="Logo HuertoHogar" class="logo-img">
+        <span>HuertoHogar</span>
+      </a>
+    </div>
+  </nav>
+
+  <main class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-lg-4">
+        <div class="card summary-card p-4 shadow-sm">
+          <h3 class="fw-bold mb-4 text-emerald text-center">Iniciar Sesión</h3>
+          <form id="login-form">
+            <div class="mb-3">
+              <label for="correoLogin" class="form-label fw-semibold">Correo Electrónico</label>
+              <input type="email" class="form-control form-control-custom" id="correoLogin" required>
+              <span id="errorCorreoLogin" class="text-error"></span>
+            </div>
+            <div class="mb-3">
+              <label for="passLogin" class="form-label fw-semibold">Contraseña</label>
+              <input type="password" class="form-control form-control-custom" id="passLogin" required>
+              <span id="errorPassLogin" class="text-error"></span>
+            </div>
+            <button type="submit" class="btn btn-yellow w-100 py-2">Ingresar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
