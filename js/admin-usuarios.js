@@ -1,4 +1,4 @@
-//LÓGICA COMPLETA DE USUARIOS
+//Logica de usuarios
 
 document.addEventListener('DOMContentLoaded', function() {
     let usuarios = [
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
             renderizarTabla();
             formUsuario.reset();
             
-            // Limpiar validaciones visuales
+          
             document.getElementById('rut').classList.remove('is-valid', 'is-invalid');
             document.getElementById('correo').classList.remove('is-valid', 'is-invalid');
             
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('tipoUsuario').value = usuario.tipo;
         document.getElementById('region').value = usuario.region;
         
-        // Disparar evento change para cargar comunas
+        // Disparar evento para cargar comunas
         document.getElementById('region').dispatchEvent(new Event('change'));
         
         setTimeout(() => {
