@@ -1,7 +1,6 @@
 
 //LÓGICA COMPLETA DE PRODUCTOS
 
-
 document.addEventListener('DOMContentLoaded', function() {
     // Arreglo de productos (simulación de base de datos)
     let productos = [
