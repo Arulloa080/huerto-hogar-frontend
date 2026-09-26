@@ -11,7 +11,7 @@
 <body>
 
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-custom-green sticky-top">
       <div class="container">
         <a class="navbar-brand font-weight-bold" href="index.html">🌱 HuertoHogar</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -37,21 +37,23 @@
 
   <main class="container my-5">
     <section class="text-center mb-5">
-      <h1 class="display-4 font-title text-success">Blogs y Consejos de Cultivo</h1>
-      <p class="lead text-muted">Aprende técnicas orgánicas, cuidado de plantas y recetas saludables directas de nuestro huerto.</p>
+      <h1 class="display-4 font-title text-custom-green">Blogs y Consejos de Cultivo</h1>
+      <p class="lead text-custom-muted">Aprende técnicas orgánicas, cuidado de plantas y recetas saludables directas de nuestro huerto.</p>
     </section>
 
     <section class="row g-4">
       <article class="col-md-6 col-lg-4">
         <div class="card h-100 shadow-sm border-0">
-          <img src="img/blog1.jpg" class="card-img-top blog-img" alt="Cómo iniciar tu huerto en casa" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=500';">
+          <img src="img/blog1.jpg" class="card-img-top blog-img" alt="Cómo iniciar tu huerto en casa">
           <div class="card-body d-flex flex-column">
-            <span class="badge bg-success align-self-start mb-2">Guía Básica</span>
+            <span class="badge bg-custom-green align-self-start mb-2">Guía Básica</span>
             <h5 class="card-title font-title">5 Pasos para iniciar tu primer huerto urbano</h5>
-            <p class="card-text text-muted flex-grow-1">Descubre los cultivos más resistentes para principiantes y cómo aprovechar la luz solar en balcones o espacios pequeños.</p>
-            <a href="#" class="btn btn-outline-success mt-auto">Leer más</a>
+            <p class="card-text text-custom-muted flex-grow-1">Descubre los cultivos más resistentes para principiantes y cómo aprovechar la luz solar en balcones o espacios pequeños.</p>
+            <button type="button" class="btn btn-outline-custom-green mt-auto" data-bs-toggle="modal" data-bs-target="#modalBlog1">
+              Leer más
+            </button>
           </div>
-          <div class="card-footer bg-transparent border-0 text-muted small">
+          <div class="card-footer bg-transparent border-0 text-custom-muted small">
             Publicado el 12 de Marzo, 2026
           </div>
         </div>
@@ -59,14 +61,16 @@
 
       <article class="col-md-6 col-lg-4">
         <div class="card h-100 shadow-sm border-0">
-          <img src="img/blog2.jpg" class="card-img-top blog-img" alt="Beneficios del compostaje" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1592417817098-8f3d6eb231fc?w=500';">
+          <img src="img/blog2.jpg" class="card-img-top blog-img" alt="Beneficios del compostaje">
           <div class="card-body d-flex flex-column">
-            <span class="badge bg-success align-self-start mb-2">Sostenibilidad</span>
+            <span class="badge bg-custom-green align-self-start mb-2">Sostenibilidad</span>
             <h5 class="card-title font-title">Compostaje doméstico: Transforma tus residuos</h5>
-            <p class="card-text text-muted flex-grow-1">Aprende a preparar abono orgánico rico en nutrientes reutilizando los restos de frutas y verduras de tu cocina.</p>
-            <a href="#" class="btn btn-outline-success mt-auto">Leer más</a>
+            <p class="card-text text-custom-muted flex-grow-1">Aprende a preparar abono orgánico rico en nutrientes reutilizando los restos de frutas y verduras de tu cocina.</p>
+            <button type="button" class="btn btn-outline-custom-green mt-auto" data-bs-toggle="modal" data-bs-target="#modalBlog2">
+              Leer más
+            </button>
           </div>
-          <div class="card-footer bg-transparent border-0 text-muted small">
+          <div class="card-footer bg-transparent border-0 text-custom-muted small">
             Publicado el 20 de Febrero, 2026
           </div>
         </div>
@@ -74,19 +78,95 @@
 
       <article class="col-md-6 col-lg-4">
         <div class="card h-100 shadow-sm border-0">
-          <img src="img/blog3.jpg" class="card-img-top blog-img" alt="Cuidado de hortalizas" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1595855759920-86582396756a?w=500';">
+          <img src="img/blog3.jpg" class="card-img-top blog-img" alt="Cuidado de hortalizas">
           <div class="card-body d-flex flex-column">
-            <span class="badge bg-success align-self-start mb-2">Cuidados</span>
+            <span class="badge bg-custom-green align-self-start mb-2">Cuidados</span>
             <h5 class="card-title font-title">Riego eficiente y control de plagas orgánico</h5>
-            <p class="card-text text-muted flex-grow-1">Evita el exceso de agua y protege tus hortalizas de manera natural sin utilizar pesticidas químicos dañinos.</p>
-            <a href="#" class="btn btn-outline-success mt-auto">Leer más</a>
+            <p class="card-text text-custom-muted flex-grow-1">Evita el exceso de agua y protege tus hortalizas de manera natural sin utilizar pesticidas químicos dañinos.</p>
+            <button type="button" class="btn btn-outline-custom-green mt-auto" data-bs-toggle="modal" data-bs-target="#modalBlog3">
+              Leer más
+            </button>
           </div>
-          <div class="card-footer bg-transparent border-0 text-muted small">
+          <div class="card-footer bg-transparent border-0 text-custom-muted small">
             Publicado el 05 de Enero, 2026
           </div>
         </div>
       </article>
     </section>
+
+    <div class="modal fade" id="modalBlog1" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header modal-custom-header">
+            <h5 class="modal-title font-title">5 Pasos para iniciar tu primer huerto urbano</h5>
+            <button type="button" class="btn-close btn-close-custom" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p class="lead">Tener un huerto en casa es más sencillo de lo que parece y no requiere de grandes hectáreas de tierra.</p>
+            <h6>1. Ubicación y Luz Solar</h6>
+            <p>Busca un espacio en tu balcón, ventana o patio que reciba entre 4 y 6 horas diarias de luz solar directa.</p>
+            <h6>2. Elección de Recipientes</h6>
+            <p>Asegúrate de que las macetas o jardineras tengan agujeros en la base para un drenaje óptimo.</p>
+            <h6>3. Substrato Nutritivo</h6>
+            <p>Utiliza una mezcla balanceada con 60% de fibra de coco y 40% de humus de lombriz para retener humedad y aportar nutrientes.</p>
+            <h6>4. ¿Qué sembrar al inicio?</h6>
+            <p>Opta por cultivos de rápido crecimiento como lechugas, rábanos, espinacas y hierbas aromáticas (menta, ciboulette, albahaca).</p>
+            <h6>5. Rutina de Riego</h6>
+            <p>Riega preferentemente al amanecer o al atardecer para evitar la evaporación rápida del agua.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modalBlog2" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header modal-custom-header">
+            <h5 class="modal-title font-title">Compostaje doméstico: Transforma tus residuos</h5>
+            <button type="button" class="btn-close btn-close-custom" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p class="lead">Casi el 50% de los residuos que generamos en el hogar son orgánicos y se pueden convertir en abono natural.</p>
+            <h6>Materiales Verdes (Ricos en Nitrógeno)</h6>
+            <p>Restos de frutas, verduras, posos de café y cáscaras de huevo.</p>
+            <h6>Materiales Marrones (Ricos en Carbono)</h6>
+            <p>Hojas secas, cartón sin tinta troceado, ramas pequeñas y servilletas de papel.</p>
+            <h6>Paso a Paso</h6>
+            <p>Intercala una capa verde y una marrón en tu compostera. Mantén una humedad leve parecida a la de una esponja escurrida y remueve el contenido una vez por semana para oxigenar la mezcla. En 2 a 3 meses obtendrás un compost oscuro con olor a tierra húmeda.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modalBlog3" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header modal-custom-header">
+            <h5 class="modal-title font-title">Riego eficiente y control de plagas orgánico</h5>
+            <button type="button" class="btn-close btn-close-custom" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p class="lead">Mantén tus hortalizas sanas sin necesidad de recurrir a pesticidas o químicos dañinos.</p>
+            <h6>Optimización del Riego</h6>
+            <p>Comprueba la humedad hundiendo un dedo un par de centímetros en la tierra. Si sale seco, es momento de regar. Evita mojar las hojas para prevenir la aparición de hongos como el oídio.</p>
+            <h6>Insecticidas Ecológicos Caseros</h6>
+            <ul>
+              <li><strong>Jabón Potásico o Neutro:</strong> Diluye una cucharada en un litro de agua para eliminar pulgones y cochinillas.</li>
+              <li><strong>Infusión de Ajo:</strong> Hierve 5 dientes de ajo machacados en agua y pulveriza para ahuyentar insectos depredadores.</li>
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
 
   <footer class="bg-dark text-white py-4 mt-5">
