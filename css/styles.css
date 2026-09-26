@@ -109,3 +109,9 @@ img.logo-img {
   color: #2E8B57;
   font-weight: 700;
 }
+
+/* --- CORRECCIÓN COLOR TÍTULO MODAL --- */
+.modal-header .modal-title,
+.modal-header h1, .modal-header h2, .modal-header h3, .modal-header h4, .modal-header h5, .modal-header h6 {
+  color: #ffffff !important;
+}
