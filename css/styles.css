@@ -1,69 +1,94 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
 
 :root {
-  --emerald-green: #2d6a4f;
-  --emerald-green-hover: #1b4332;
-  --light-bg: #f8f9fa;
-  --yellow-accent: #ffc107;
-  --yellow-hover: #e0a800;
+  --bg-main: #F7F7F7;
+  --primary-green: #2E8B57;
+  --accent-yellow: #FFD700;
+  --title-brown: #8B4513;
+  --text-main: #333333;
+  --text-muted: #666666;
+  --font-family-base: 'Montserrat', sans-serif;
+  --font-family-title: 'Playfair Display', serif;
 }
 
 body {
-  font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
-  background-color: var(--light-bg);
-  color: #212529;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: var(--font-family-base);
 }
 
-.navbar-green {
-  background-color: var(--emerald-green);
+h1, h2, h3, h4, h5, h6, .font-title {
+  font-family: var(--font-family-title);
+  color: var(--title-brown);
 }
 
-.brand-text {
-  font-weight: 700;
-  font-size: 1.25rem;
-  color: #ffffff !important;
+.text-custom-green {
+  color: var(--primary-green) !important;
 }
 
-.logo-img {
-  height: 36px;
-  width: auto;
+.bg-custom-green {
+  background-color: var(--primary-green) !important;
 }
 
-.text-emerald {
-  color: var(--emerald-green) !important;
-}
-
-.bg-emerald {
-  background-color: var(--emerald-green) !important;
+.text-custom-muted {
+  color: var(--text-muted) !important;
 }
 
 .btn-yellow {
-  background-color: var(--yellow-accent);
+  background-color: var(--accent-yellow);
   color: #212529;
   border: none;
 }
 
 .btn-yellow:hover {
-  background-color: var(--yellow-hover);
+  background-color: #e0a800;
   color: #212529;
 }
 
-.btn-outline-emerald {
-  color: var(--emerald-green);
-  border-color: var(--emerald-green);
+.text-error {
+  color: #dc3545;
+  font-size: 0.8em;
+  display: block;
 }
 
-.btn-outline-emerald:hover {
-  background-color: var(--emerald-green);
-  color: #ffffff;
+.text-emerald {
+  color: var(--primary-green);
+  font-weight: 700;
+}
+
+.card-img-top {
+  height: 190px;
+  object-fit: cover;
 }
 
 .max-w-750 {
   max-width: 750px;
 }
 
+.btn-outline-custom-green {
+  color: var(--primary-green);
+  border-color: var(--primary-green);
+}
+
+.btn-outline-custom-green:hover {
+  background-color: var(--primary-green);
+  color: #ffffff;
+}
+
 .blog-img {
   height: 200px;
   object-fit: cover;
-  width: 100%;
+}
+
+.modal-custom-header {
+  background-color: var(--primary-green);
+  color: #ffffff;
+}
+
+.modal-custom-header .modal-title {
+  color: #ffffff !important;
+}
+
+.btn-close-custom {
+  filter: invert(1) grayscale(100%) brightness(200%);
 }
