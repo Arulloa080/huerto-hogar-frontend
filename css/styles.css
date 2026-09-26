@@ -79,3 +79,14 @@ h1, h2, h3, h4, .brand-text {
   height: 200px;
   object-fit: cover;
 }
+
+.blog-img {
+  height: 220px;
+  object-fit: cover;
+  border-top-left-radius: var(--bs-card-inner-border-radius);
+  border-top-right-radius: var(--bs-card-inner-border-radius);
+}
+
+.font-title {
+  font-family: 'Playfair Display', serif;
+}
