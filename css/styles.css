@@ -1,93 +1,95 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
 
 :root {
-  --bg-main: #F7F7F7;
-  --primary-green: #2E8B57;
-  --accent-yellow: #FFD700;
-  --title-brown: #8B4513;
-  --text-main: #333333;
-  --text-muted: #666666;
-  --font-family-base: 'Montserrat', sans-serif;
-  --font-family-title: 'Playfair Display', serif;
+  --emerald-green: #2d6a4f;
+  --emerald-green-hover: #1b4332;
+  --light-bg: #f8f9fa;
+  --yellow-accent: #ffc107;
+  --yellow-hover: #e0a800;
 }
 
 body {
-  background-color: var(--bg-main);
-  color: var(--text-main);
-  font-family: var(--font-family-base);
+  font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+  background-color: var(--light-bg);
+  color: #212529;
 }
 
-h1, h2, h3, h4, h5, h6, .font-title {
-  font-family: var(--font-family-title);
-  color: var(--title-brown);
+/* Navbar y Marca */
+.navbar-green {
+  background-color: var(--emerald-green);
 }
 
-.text-custom-green {
-  color: var(--primary-green) !important;
+.brand-text {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #ffffff !important;
 }
 
-.bg-custom-green {
-  background-color: var(--primary-green) !important;
+/* Control estricto de imagen del Logo */
+.navbar-brand img,
+.navbar-brand .logo-img,
+img.logo-img {
+  width: auto !important;
+  max-width: 140px !important;
+  height: 40px !important;
+  max-height: 40px !important;
+  object-fit: contain !important;
+  display: inline-block;
 }
 
-.text-custom-muted {
-  color: var(--text-muted) !important;
+/* Clases de utilidad y botones */
+.text-emerald {
+  color: var(--emerald-green) !important;
+}
+
+.bg-emerald {
+  background-color: var(--emerald-green) !important;
 }
 
 .btn-yellow {
-  background-color: var(--accent-yellow);
+  background-color: var(--yellow-accent);
   color: #212529;
   border: none;
 }
 
 .btn-yellow:hover {
-  background-color: #e0a800;
+  background-color: var(--yellow-hover);
   color: #212529;
 }
 
-.text-error {
-  color: #dc3545;
-  font-size: 0.8em;
-  display: block;
+.btn-outline-emerald {
+  color: var(--emerald-green);
+  border-color: var(--emerald-green);
 }
 
-.text-emerald {
-  color: var(--primary-green);
-  font-weight: 700;
-}
-
-.card-img-top {
-  height: 190px;
-  object-fit: cover;
+.btn-outline-emerald:hover {
+  background-color: var(--emerald-green);
+  color: #ffffff;
 }
 
 .max-w-750 {
   max-width: 750px;
 }
 
-.btn-outline-custom-green {
-  color: var(--primary-green);
-  border-color: var(--primary-green);
-}
-
-.btn-outline-custom-green:hover {
-  background-color: var(--primary-green);
-  color: #ffffff;
-}
-
+/* Blog */
 .blog-img {
   height: 200px;
   object-fit: cover;
-<<<<<<< HEAD
   width: 100%;
 }
 
+/* Tarjetas de productos uniformes en Inicio */
 #products-container .card {
   height: 100%;
 }
 
+#products-container .card-img-top {
+  height: 220px;
+  object-fit: cover;
+  width: 100%;
+}
 
-
+/* Mapa responsivo a pantalla completa en Nosotros */
 .map-container {
   width: 100%;
   height: 400px;
@@ -99,19 +101,4 @@ h1, h2, h3, h4, h5, h6, .font-title {
   width: 100% !important;
   height: 100% !important;
   border: 0;
-=======
-}
-
-.modal-custom-header {
-  background-color: var(--primary-green);
-  color: #ffffff;
-}
-
-.modal-custom-header .modal-title {
-  color: #ffffff !important;
-}
-
-.btn-close-custom {
-  filter: invert(1) grayscale(100%) brightness(200%);
->>>>>>> 41e8b1a21917a03f727b3d449cd844527a3d4e89
 }
