@@ -331,7 +331,7 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('carrito', JSON.stringify(carrito));
     if (typeof updateCartBadge === 'function') updateCartBadge();
 
-    // Actualizar texto y mostrar la notificación flotante (Toast)
+
     const toastName = document.getElementById('toast-product-name');
     if (toastName) {
       toastName.textContent = `${cantidad} x ${prod.nombre}`;
