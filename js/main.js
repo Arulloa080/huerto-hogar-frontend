@@ -1,9 +1,24 @@
 document.addEventListener('DOMContentLoaded', function() {
+    const regionesYcomunas = [
+        { region: "Región Metropolitana de Santiago", comunas: ["Santiago", "San Bernardo", "Puente Alto", "Maipú", "Providencia"] },
+        { region: "Región de Valparaíso", comunas: ["Valparaíso", "Viña del Mar", "Quilpué", "Villa Alemana"] },
+        { region: "Región del Biobío", comunas: ["Concepción", "Talcahuano", "Nacimiento", "Los Ángeles"] },
+        { region: "Región de La Araucanía", comunas: ["Temuco", "Villarrica", "Pucón", "Padre Las Casas"] },
+        { region: "Región de Los Lagos", comunas: ["Puerto Montt", "Puerto Varas", "Osorno", "Castro"] }
+    ];
+
     function esCorreoValido(correo) {
         return correo.endsWith('@duoc.cl') ||
                correo.endsWith('@profesor.duoc.cl') ||
                correo.endsWith('@gmail.com');
     }
+
+    function esRunValido(run) {
+        const regexRun = /^[0-9]{7,8}[0-9Kk]$/;
+        return regexRun.test(run);
+    }
+
+  
     const correoLogin = document.getElementById('correoLogin');
     const passLogin = document.getElementById('passLogin');
     const btnLogin = document.getElementById('btnLogin');
@@ -15,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
         correoLogin.addEventListener('input', function(e) {
             const valor = e.target.value;
             if (!esCorreoValido(valor)) {
-                errorCorreoLogin.className = "mensaje-error";
+                errorCorreoLogin.className = "text-danger small";
                 errorCorreoLogin.textContent = "Solo correos @duoc.cl, @profesor.duoc.cl o @gmail.com";
                 btnLogin.disabled = true;
             } else {
@@ -27,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
         passLogin.addEventListener('input', function(e) {
             const valor = e.target.value;
             if (valor.length < 4 || valor.length > 10) {
-                errorPassLogin.className = "mensaje-error";
+                errorPassLogin.className = "text-danger small";
                 errorPassLogin.textContent = "La contraseña debe tener entre 4 y 10 caracteres.";
                 btnLogin.disabled = true; 
             } else {
@@ -47,51 +62,103 @@ document.addEventListener('DOMContentLoaded', function() {
             const usuarioGuardado = JSON.parse(localStorage.getItem('usuarioHuertoHogar'));
             
             if (usuarioGuardado && usuarioGuardado.correo === correoLogin.value && usuarioGuardado.password === passLogin.value) {
-                errorCorreoLogin.className = "mensaje-exito";
+                errorCorreoLogin.className = "text-success small fw-bold";
                 errorCorreoLogin.textContent = "¡Inicio de sesión correcto! Bienvenido.";
-                window.location.href = "index.html";
+                setTimeout(() => window.location.href = "index.html", 1000);
             } else {
-                errorCorreoLogin.className = "mensaje-error";
+                errorCorreoLogin.className = "text-danger small fw-bold";
                 errorCorreoLogin.textContent = "Credenciales incorrectas o usuario no registrado.";
             }
         });
     }
 
-    const correoReg = document.getElementById('correoReg');
-    const passReg = document.getElementById('passReg');
-    const btnRegistro = document.getElementById('btnRegistro');
-    const errorCorreoReg = document.getElementById('errorCorreoReg');
-    const errorPassReg = document.getElementById('errorPassReg');
-    
-    if (correoReg && passReg && btnRegistro) {
+    const formRegistro = document.getElementById('formRegistro');
+    if (formRegistro) {
+        const runReg = document.getElementById('runReg');
+        const correoReg = document.getElementById('correoReg');
+        const nombreReg = document.getElementById('nombreReg');
+        const apellidoReg = document.getElementById('apellidoReg');
+        const passReg = document.getElementById('passReg');
+        const regionReg = document.getElementById('regionReg');
+        const comunaReg = document.getElementById('comunaReg');
+        const direccionReg = document.getElementById('direccionReg');
+        const btnRegistro = document.getElementById('btnRegistro');
         
+        const errorRunReg = document.getElementById('errorRunReg');
+        const errorCorreoReg = document.getElementById('errorCorreoReg');
+        const errorPassReg = document.getElementById('errorPassReg');
+
+        // Llenar selects de regiones
+        regionesYcomunas.forEach(item => {
+            const option = document.createElement('option');
+            option.value = item.region;
+            option.textContent = item.region;
+            regionReg.appendChild(option);
+        });
+
+        regionReg.addEventListener('change', function() {
+            comunaReg.innerHTML = '<option value="">Seleccione Comuna...</option>';
+            const regionElegida = regionesYcomunas.find(r => r.region === this.value);
+            if (regionElegida) {
+                regionElegida.comunas.forEach(comuna => {
+                    const option = document.createElement('option');
+                    option.value = comuna;
+                    option.textContent = comuna;
+                    comunaReg.appendChild(option);
+                });
+            }
+            verificarBotonRegistro();
+        });
+
+        runReg.addEventListener('input', function(e) {
+            if (!esRunValido(e.target.value)) {
+                errorRunReg.textContent = "RUN inválido. Debe tener entre 7 y 9 caracteres, sin puntos ni guion.";
+            } else {
+                errorRunReg.textContent = "";
+            }
+            verificarBotonRegistro();
+        });
+
         correoReg.addEventListener('input', function(e){
             const valor = e.target.value;
             if (!esCorreoValido(valor)) {
-                errorCorreoReg.className = "mensaje-error";
+                errorCorreoReg.className = "text-danger small";
                 errorCorreoReg.textContent = "Solo correos @duoc.cl, @profesor.duoc.cl o @gmail.com";
-                btnRegistro.disabled = true; 
             } else {
                 errorCorreoReg.textContent = "";
-                verificarBotonRegistro();
             }
+            verificarBotonRegistro();
         });
 
         passReg.addEventListener('input', function(e) {
             const valor = e.target.value;
             if (valor.length < 4 || valor.length > 10) {
-                errorPassReg.className = "mensaje-error";
+                errorPassReg.className = "text-danger small";
                 errorPassReg.textContent = "La contraseña debe tener entre 4 y 10 caracteres.";
-                btnRegistro.disabled = true;
             } else {
                 errorPassReg.textContent = "";
-                verificarBotonRegistro();
             }
+            verificarBotonRegistro();
+        });
+
+        [nombreReg, apellidoReg, direccionReg, comunaReg].forEach(input => {
+            input.addEventListener('input', verificarBotonRegistro);
         });
 
         function verificarBotonRegistro() {
-            if (esCorreoValido(correoReg.value) && passReg.value.length >= 4 && passReg.value.length <= 10) {
+            const esRunOk = esRunValido(runReg.value);
+            const esCorreoOk = esCorreoValido(correoReg.value);
+            const esPassOk = passReg.value.length >= 4 && passReg.value.length <= 10;
+            const camposLlenos = nombreReg.value.trim() !== "" && 
+                                 apellidoReg.value.trim() !== "" && 
+                                 regionReg.value !== "" && 
+                                 comunaReg.value !== "" && 
+                                 direccionReg.value.trim() !== "";
+
+            if (esRunOk && esCorreoOk && esPassOk && camposLlenos) {
                 btnRegistro.disabled = false;
+            } else {
+                btnRegistro.disabled = true;
             }
         }
 
@@ -99,20 +166,28 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault(); 
             
             const usuarioNuevo = {
+                run: runReg.value,
                 correo: correoReg.value,
-                password: passReg.value
+                password: passReg.value,
+                nombre: nombreReg.value,
+                apellido: apellidoReg.value,
+                region: regionReg.value,
+                comuna: comunaReg.value,
+                direccion: direccionReg.value
             };
             
             localStorage.setItem('usuarioHuertoHogar', JSON.stringify(usuarioNuevo));
             
-            errorCorreoReg.className = "mensaje-exito";
+            errorCorreoReg.className = "text-success small fw-bold";
             errorCorreoReg.textContent = "¡Registro exitoso! Ya puedes iniciar sesión.";
             
             document.getElementById('formRegistro').reset();
             btnRegistro.disabled = true;
+            setTimeout(() => window.location.href = "login.html", 2000);
         });
     }
 });
+
 document.addEventListener('DOMContentLoaded', () => {
   const productsContainer = document.getElementById('products-container');
   const categoryFilters = document.getElementById('category-filters');
