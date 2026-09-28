@@ -1,9 +1,5 @@
-
-//LÓGICA COMPLETA DE PRODUCTOS
-
-
 document.addEventListener('DOMContentLoaded', function() {
-    // Arreglo de productos (simulación de base de datos)
+
     let productos = [
         { codigo: 'FR001', nombre: 'Manzanas Fuji', categoria: 'Frutas', precio: 1200, stock: 150, stockCritico: 20 },
         { codigo: 'VR001', nombre: 'Zanahorias Orgánicas', categoria: 'Verduras', precio: 900, stock: 15, stockCritico: 20 },
@@ -16,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const modalProductoEl = document.getElementById('modalProducto');
     const modalProducto = modalProductoEl ? new bootstrap.Modal(modalProductoEl) : null;
 
-    // Función para renderizar la tabla
     function renderizarTabla() {
         if (!tablaCuerpo) return;
         
@@ -25,14 +20,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
         productos.forEach((prod, index) => {
             const fila = document.createElement('tr');
-            
-            // Verificar stock crítico
+  
             if (prod.stock <= prod.stockCritico) {
                 fila.classList.add('table-danger');
                 hayStockCritico = true;
             }
 
-            // Formatear precio (FREE si es 0)
+        
             const precioMostrar = prod.precio === 0 ? '<span class="badge bg-success">FREE</span>' : `$${prod.precio.toLocaleString('es-CL')}`;
 
             fila.innerHTML = `
@@ -50,13 +44,12 @@ document.addEventListener('DOMContentLoaded', function() {
             tablaCuerpo.appendChild(fila);
         });
 
-        // Mostrar/ocultar alerta de stock crítico
+
         if (alertaStock) {
             alertaStock.style.display = hayStockCritico ? 'flex' : 'none';
         }
     }
 
-    // Agregar nuevo producto
     if (formProducto) {
         formProducto.addEventListener('submit', function(e) {
             e.preventDefault();
@@ -78,7 +71,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Hacer funciones globales
     window.eliminarProducto = function(index) {
         if (confirm('¿Estás seguro de eliminar este producto?')) {
             productos.splice(index, 1);
@@ -95,13 +87,13 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('stock').value = prod.stock;
         document.getElementById('stockCritico').value = prod.stockCritico;
         
-        // Eliminar el producto actual para que al guardar se "actualice"
+
         productos.splice(index, 1);
         renderizarTabla();
         
         if (modalProducto) modalProducto.show();
     };
 
-    // Renderizar al cargar
+
     renderizarTabla();
 });
