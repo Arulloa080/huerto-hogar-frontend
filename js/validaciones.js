@@ -83,7 +83,7 @@ function aplicarValidacionRUN() {
                 this.classList.remove('is-invalid');
                 this.classList.add('is-valid');
                 if (feedbackRUN) {
-                    feedbackRUN.textContent = 'RUN válido ✓';
+                    feedbackRUN.textContent = 'RUN válido';
                     feedbackRUN.classList.remove('invalid-feedback');
                     feedbackRUN.classList.add('valid-feedback');
                 }

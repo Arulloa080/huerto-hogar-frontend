@@ -1,3 +1,5 @@
+//Logica de usuarios
+
 document.addEventListener('DOMContentLoaded', function() {
     let usuarios = [
         { rut: '12.345.678-9', nombre: 'Sofía', apellidos: 'Catalán', correo: 'sofia@duoc.cl', tipo: 'Administrador', region: 'Región Metropolitana', comuna: 'Santiago' },
@@ -56,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
             renderizarTabla();
             formUsuario.reset();
             
-         
+          
             document.getElementById('rut').classList.remove('is-valid', 'is-invalid');
             document.getElementById('correo').classList.remove('is-valid', 'is-invalid');
             
@@ -79,7 +81,8 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('correo').value = usuario.correo;
         document.getElementById('tipoUsuario').value = usuario.tipo;
         document.getElementById('region').value = usuario.region;
-
+        
+        // Disparar evento para cargar comunas
         document.getElementById('region').dispatchEvent(new Event('change'));
         
         setTimeout(() => {
