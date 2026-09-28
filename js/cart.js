@@ -60,7 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Eventos de eliminar
     document.querySelectorAll('.delete-item-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
         const idx = e.target.getAttribute('data-index');
