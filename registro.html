@@ -35,24 +35,68 @@
         </nav>
     </header>
 
-    <main class="container mt-5 flex-grow-1">
+    <main class="container mt-5 mb-5 flex-grow-1">
         <div class="row justify-content-center">
-            <div class="col-md-6">
+            <div class="col-md-8">
                 <div class="card shadow">
                     <div class="card-body p-5">
                         <h2 class="text-center mb-4">Crea tu Cuenta</h2>
                         
                         <form id="formRegistro">
-                            <div class="mb-3">
-                                <label for="correoReg" class="form-label">Correo Electrónico:</label>
-                                <input type="email" id="correoReg" class="form-control" placeholder="ejemplo@duoc.cl">
-                                <span id="errorCorreoReg" class="mensaje-error text-danger"></span>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="runReg" class="form-label">RUN (Sin puntos ni guion): <span class="text-danger">*</span></label>
+                                    <input type="text" id="runReg" class="form-control" placeholder="Ej: 19011022K" maxlength="9" required>
+                                    <span id="errorRunReg" class="text-danger small"></span>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="correoReg" class="form-label">Correo Electrónico: <span class="text-danger">*</span></label>
+                                    <input type="email" id="correoReg" class="form-control" placeholder="ejemplo@duoc.cl" maxlength="100" required>
+                                    <span id="errorCorreoReg" class="text-danger small"></span>
+                                </div>
                             </div>
-                            
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="nombreReg" class="form-label">Nombre: <span class="text-danger">*</span></label>
+                                    <input type="text" id="nombreReg" class="form-control" maxlength="50" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="apellidoReg" class="form-label">Apellidos: <span class="text-danger">*</span></label>
+                                    <input type="text" id="apellidoReg" class="form-control" maxlength="100" required>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="passReg" class="form-label">Contraseña: <span class="text-danger">*</span></label>
+                                    <input type="password" id="passReg" class="form-control" placeholder="Entre 4 y 10 caracteres" maxlength="10" required>
+                                    <span id="errorPassReg" class="text-danger small"></span>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="fechaNacReg" class="form-label">Fecha de Nacimiento: (Opcional)</label>
+                                    <input type="date" id="fechaNacReg" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="regionReg" class="form-label">Región: <span class="text-danger">*</span></label>
+                                    <select id="regionReg" class="form-select" required>
+                                        <option value="">Seleccione Región...</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="comunaReg" class="form-label">Comuna: <span class="text-danger">*</span></label>
+                                    <select id="comunaReg" class="form-select" required>
+                                        <option value="">Seleccione Comuna...</option>
+                                    </select>
+                                </div>
+                            </div>
+
                             <div class="mb-3">
-                                <label for="passReg" class="form-label">Contraseña:</label>
-                                <input type="password" id="passReg" class="form-control" placeholder="Entre 4 y 10 caracteres">
-                                <span id="errorPassReg" class="mensaje-error text-danger"></span>
+                                <label for="direccionReg" class="form-label">Dirección: <span class="text-danger">*</span></label>
+                                <input type="text" id="direccionReg" class="form-control" maxlength="300" required>
                             </div>
                             
                             <div class="d-grid gap-2 mt-4">
@@ -66,8 +110,9 @@
         </div>
     </main>
 
-    <footer class="text-center mt-auto py-4">
-        <p class="text-muted mb-0 fw-semibold">Huerto Hogar - Conectando familias con el campo chileno de forma sostenible.</p>
+    <footer class="text-center mt-auto py-4 bg-dark text-white">
+        <p class="mb-1">🌱 <strong>HuertoHogar</strong> - Productos agrícolas directo a tu mesa</p>
+        <small>&copy; 2026 Todos los derechos reservados.</small>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
