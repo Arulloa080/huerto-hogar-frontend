@@ -1,13 +1,35 @@
-
-//LÓGICA COMPLETA DE PRODUCTOS
+//Logica de productos con localstorage
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Arreglo de productos (simulación de base de datos)
-    let productos = [
+    
+    // Clave para localStorage
+    const CLAVE_STORAGE = 'huertohogar_productos';
+
+    // Datos iniciales de prueba 
+    const productosIniciales = [
         { codigo: 'FR001', nombre: 'Manzanas Fuji', categoria: 'Frutas', precio: 1200, stock: 150, stockCritico: 20 },
         { codigo: 'VR001', nombre: 'Zanahorias Orgánicas', categoria: 'Verduras', precio: 900, stock: 15, stockCritico: 20 },
         { codigo: 'PO001', nombre: 'Miel Orgánica Muestra', categoria: 'Orgánicos', precio: 0, stock: 50, stockCritico: 10 }
     ];
+
+    // Función para cargar productos desde localStorage o usar los iniciales
+    function cargarProductos() {
+        const productosGuardados = localStorage.getItem(CLAVE_STORAGE);
+        if (productosGuardados) {
+            return JSON.parse(productosGuardados);
+        }
+        // Si no hay nada guardado, usamos los iniciales y los guardamos
+        guardarProductos(productosIniciales);
+        return productosIniciales;
+    }
+
+    // Función para guardar 
+    function guardarProductos(productos) {
+        localStorage.setItem(CLAVE_STORAGE, JSON.stringify(productos));
+    }
+
+    // Cargar productos al iniciar
+    let productos = cargarProductos();
 
     const tablaCuerpo = document.getElementById('cuerpoTablaProductos');
     const alertaStock = document.getElementById('alertaStockCritico');
@@ -25,13 +47,13 @@ document.addEventListener('DOMContentLoaded', function() {
         productos.forEach((prod, index) => {
             const fila = document.createElement('tr');
             
-            // Verificar stock crítico
+            // Lógica de Stock Crítico: pintar fila de rojo
             if (prod.stock <= prod.stockCritico) {
                 fila.classList.add('table-danger');
                 hayStockCritico = true;
             }
 
-            // Formatear precio (FREE si es 0)
+            // Lógica de Precio FREE
             const precioMostrar = prod.precio === 0 ? '<span class="badge bg-success">FREE</span>' : `$${prod.precio.toLocaleString('es-CL')}`;
 
             fila.innerHTML = `
@@ -70,6 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
             };
 
             productos.push(nuevoProducto);
+            guardarProductos(productos); 
             renderizarTabla();
             formProducto.reset();
             
@@ -77,14 +100,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Hacer funciones globales
+    // Función global para eliminar producto
     window.eliminarProducto = function(index) {
         if (confirm('¿Estás seguro de eliminar este producto?')) {
             productos.splice(index, 1);
+            guardarProductos(productos); 
             renderizarTabla();
         }
     };
 
+    // Función global para editar producto
     window.editarProducto = function(index) {
         const prod = productos[index];
         document.getElementById('codigo').value = prod.codigo;
@@ -94,13 +119,14 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('stock').value = prod.stock;
         document.getElementById('stockCritico').value = prod.stockCritico;
         
-        // Eliminar el producto actual para que al guardar se "actualice"
+        // Eliminar el producto actual para que al guardar se actualice
         productos.splice(index, 1);
+        guardarProductos(productos);
         renderizarTabla();
         
         if (modalProducto) modalProducto.show();
     };
 
-    // Renderizar al cargar
+    // Renderizar al cargar la página
     renderizarTabla();
 });
