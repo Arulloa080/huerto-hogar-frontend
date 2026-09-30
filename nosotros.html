@@ -8,9 +8,14 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="d-flex flex-column min-vh-100">
+
   <nav class="navbar navbar-expand-lg navbar-dark navbar-green shadow-sm">
     <div class="container">
-      <a class="navbar-brand d-flex align-items-center gap-2 brand-text" href="index.html">
+      <a class="navbar-brand d-flex align-items-center gap-2 brand-text text-white text-decoration-none" 
+         href="index.html" 
+         style="transition: color 0.15s ease-in-out;"
+         onmousedown="this.style.setProperty('color', '#dc3545', 'important')" 
+         onmouseup="this.style.setProperty('color', '#ffffff', 'important')">
         <img src="img/logo.png" alt="Logo HuertoHogar" class="logo-img">
         <span>HuertoHogar</span>
       </a>
@@ -21,63 +26,35 @@
         <ul class="navbar-nav me-auto">
           <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
           <li class="nav-item"><a class="nav-link" href="carrito.html">Tienda / Carrito</a></li>
+          <li class="nav-item"><a class="nav-link" href="blogs.html">Blogs</a></li>
           <li class="nav-item"><a class="nav-link active" href="nosotros.html">Nosotros</a></li>
-          <li class="nav-item"><a class="nav-link" href="blogs.html">Blog</a></li>
-          <li class="nav-item"><a class="nav-link fw-bold text-success" href="login.html">Iniciar Sesión</a></li>
-          <li class="nav-item"><a class="nav-link fw-bold text-success" href="registro.html">Registro</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.html">Iniciar Sesión</a></li>
+          <li class="nav-item"><a class="nav-link" href="registro.html">Registro</a></li>
           <li class="nav-item"><a class="nav-link text-danger" href="admin-home.html">Panel Admin</a></li>
         </ul>
+        <a href="carrito.html" class="btn btn-yellow position-relative d-flex align-items-center gap-2 font-weight-bold">
+          <span>🛒 Carrito</span>
+          <span id="cart-count-badge" class="badge bg-danger rounded-pill">0</span>
+        </a>
       </div>
     </div>
   </nav>
 
- 
-  <main class="container my-5">
-   
-    <section class="text-center mb-5">
-      <h1 class="mb-3">Sobre HuertoHogar</h1>
-      <p class="lead text-secondary max-w-750 mx-auto">
-        HuertoHogar es una tienda online dedicada a llevar la frescura y calidad de los productos del campo directamente a la puerta de nuestros clientes en Chile. Con más de 6 años de experiencia, operamos en más de 9 puntos a lo largo del país, incluyendo ciudades clave como Santiago, Puerto Montt, Villarica, Nacimiento, Viña del Mar, Valparaíso, y Concepción. Nuestra misión es conectar a las familias chilenas con el campo, promoviendo un estilo de vida saludable y sostenible.
-      </p>
-    </section>
-
-    
-    <section class="row g-4 mb-5">
-      <div class="col-md-6">
-        <div class="card h-100 border-0 shadow-sm p-4">
-          <h2 class="h3 mb-3 text-emerald">Misión</h2>
-          <p class="text-secondary">
-            Nuestra misión es proporcionar productos frescos y de calidad directamente desde el campo hasta la puerta de nuestros clientes, garantizando la frescura y el sabor en cada entrega. Nos comprometemos a fomentar una conexión más cercana entre los consumidores y los agricultores locales, apoyando prácticas agrícolas sostenibles y promoviendo una alimentación saludable en todos los hogares chilenos.
-          </p>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card h-100 border-0 shadow-sm p-4">
-          <h2 class="h3 mb-3 text-emerald">Visión</h2>
-          <p class="text-secondary">
-            Nuestra visión es ser la tienda online líder en la distribución de productos frescos y naturales en Chile, reconocida por nuestra calidad excepcional, servicio al cliente y compromiso con la sostenibilidad. Aspiramos a expandir nuestra presencia a nivel nacional e internacional, estableciendo un nuevo estándar en la distribución de productos agrícolas directos del productor al consumidor.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="my-5">
-      <h2 class="text-center mb-3">Ubicación de Tiendas</h2>
-      <p class="text-center text-secondary mb-4">
-        Santiago, Puerto Montt, Villarica, Nacimiento, Viña del Mar, Valparaíso, y Concepción.
-      </p>
-      <div class="map-container shadow-sm">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13317.368798084687!2d-70.6504502!3d-33.4377756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9692c596e0dbd023%3A0x23a31c5b8f2d5069!2sSantiago%2C%20Chile!5e0!3m2!1ses!2scl!4v1710000000000!5m2!1ses!2scl" allowfullscreen="" loading="lazy"></iframe>
-      </div>
+  <main class="container py-5 flex-grow-1">
+    <section class="text-center mx-auto mb-5" style="max-width: 800px;">
+      <h1 class="fw-bold mb-3">Sobre HuertoHogar</h1>
+      <p class="lead text-secondary">Conectamos a agricultores locales directamente con familias que buscan alimentos frescos, saludables y sostenibles.</p>
     </section>
   </main>
 
   <footer class="bg-dark text-white text-center py-4 mt-auto">
     <div class="container">
-      <p class="mb-0">&copy; HuertoHogar - Del campo al hogar.</p>
+      <p class="mb-1 fw-bold">🌱 HuertoHogar - Productos agrícolas directo a tu mesa</p>
+      <small class="text-white-50">&copy; 2026 Todos los derechos reservados.</small>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/cart-badge.js"></script>
 </body>
 </html>
