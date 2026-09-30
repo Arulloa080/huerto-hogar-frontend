@@ -3,173 +3,190 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HuertoHogar - Blogs y Consejos</title>
+  <title>HuertoHogar - Blogs</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
 
-<nav class="navbar navbar-expand-lg navbar-dark navbar-green shadow-sm">
-  <div class="container">
-    <a class="navbar-brand d-flex align-items-center gap-2 brand-text" href="index.html">
-      <img src="img/logo.png" alt="Logo HuertoHogar" class="logo-img">
-      <span>HuertoHogar</span>
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-        <li class="nav-item"><a class="nav-link" href="carrito.html">Tienda / Carrito</a></li>
-        <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
-        <li class="nav-item"><a class="nav-link active" href="blogs.html">Blog</a></li>
-        <li class="nav-item"><a class="nav-link fw-bold text-success" href="login.html">Iniciar Sesión</a></li>
-        <li class="nav-item"><a class="nav-link fw-bold text-success" href="registro.html">Registro</a></li>
-        <li class="nav-item"><a class="nav-link text-danger" href="admin-home.html">Panel Admin</a></li>
-      </ul>
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-green shadow-sm">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2 brand-text text-white text-decoration-none" href="index.html">
+        <img src="img/logo.png" alt="Logo HuertoHogar" class="logo-img">
+        <span>HuertoHogar</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="carrito.html">Tienda / Carrito</a></li>
+          <li class="nav-item"><a class="nav-link active" href="blogs.html">Blogs</a></li>
+          <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.html">Iniciar Sesión</a></li>
+          <li class="nav-item"><a class="nav-link" href="registro.html">Registro</a></li>
+          <li class="nav-item"><a class="nav-link text-danger" href="admin-home.html">Panel Admin</a></li>
+        </ul>
+        <a href="carrito.html" class="btn btn-yellow position-relative d-flex align-items-center gap-2 font-weight-bold">
+          <span>🛒 Carrito</span>
+          <span id="cart-count-badge" class="badge bg-danger rounded-pill">0</span>
+        </a>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
-  <main class="container py-5">
-    <section class="text-center mx-auto max-w-750 mb-5">
-      <h1 class="display-4 fw-bold text-dark mb-3">Blogs y Consejos <span class="text-emerald">de Cultivo</span></h1>
-      <p class="lead text-secondary mb-4">Aprende técnicas orgánicas, cuidado de plantas y recetas saludables para tu huerto.</p>
+  <main class="container py-5 flex-grow-1">
+    <section class="text-center mx-auto mb-5">
+      <h1 class="display-5 fw-bold text-dark mb-3">Blog de Noticias y Consejos</h1>
+      <p class="lead text-secondary">Descubre nuestras últimas publicaciones sobre agricultura sostenible, recetas y vida saludable.</p>
     </section>
 
-    <section class="row g-4">
-      <article class="col-md-6 col-lg-4">
+    <div class="row g-4" id="blogs-container">
+      
+      <div class="col-md-6 col-lg-4">
         <div class="card h-100 shadow-sm border-0">
-          <img src="img/blog1.jpg" class="card-img-top blog-img" alt="Cómo iniciar tu huerto en casa">
+          <img src="img/blog1.jpg" class="card-img-top blog-card-img" alt="Beneficios de los productos orgánicos" onerror="this.src='img/logo.png'">
           <div class="card-body d-flex flex-column">
-            <span class="badge bg-emerald text-white align-self-start mb-2">Guía Básica</span>
-            <h5 class="card-title fw-bold text-dark">5 Pasos para iniciar tu primer huerto urbano</h5>
-            <p class="card-text text-secondary flex-grow-1">Descubre los cultivos más resistentes para principiantes y cómo aprovechar la luz solar en balcones o espacios pequeños.</p>
-            <button type="button" class="btn btn-outline-emerald mt-auto fw-bold" data-bs-toggle="modal" data-bs-target="#modalBlog1">
-              Leer más
-            </button>
-          </div>
-          <div class="card-footer bg-transparent border-0 text-secondary small">
-            Publicado el 12 de Marzo, 2026
-          </div>
-        </div>
-      </article>
-
-      <article class="col-md-6 col-lg-4">
-        <div class="card h-100 shadow-sm border-0">
-          <img src="img/blog2.jpg" class="card-img-top blog-img" alt="Beneficios del compostaje">
-          <div class="card-body d-flex flex-column">
-            <span class="badge bg-emerald text-white align-self-start mb-2">Sostenibilidad</span>
-            <h5 class="card-title fw-bold text-dark">Compostaje doméstico: Transforma tus residuos</h5>
-            <p class="card-text text-secondary flex-grow-1">Aprende a preparar abono orgánico rico en nutrientes reutilizando los restos de frutas y verduras de tu cocina.</p>
-            <button type="button" class="btn btn-outline-emerald mt-auto fw-bold" data-bs-toggle="modal" data-bs-target="#modalBlog2">
-              Leer más
-            </button>
-          </div>
-          <div class="card-footer bg-transparent border-0 text-secondary small">
-            Publicado el 20 de Febrero, 2026
-          </div>
-        </div>
-      </article>
-
-      <article class="col-md-6 col-lg-4">
-        <div class="card h-100 shadow-sm border-0">
-          <img src="img/blog3.jpg" class="card-img-top blog-img" alt="Cuidado de hortalizas">
-          <div class="card-body d-flex flex-column">
-            <span class="badge bg-emerald text-white align-self-start mb-2">Cuidados</span>
-            <h5 class="card-title fw-bold text-dark">Riego eficiente y control de plagas orgánico</h5>
-            <p class="card-text text-secondary flex-grow-1">Evita el exceso de agua y protege tus hortalizas de manera natural sin utilizar pesticidas químicos dañinos.</p>
-            <button type="button" class="btn btn-outline-emerald mt-auto fw-bold" data-bs-toggle="modal" data-bs-target="#modalBlog3">
-              Leer más
-            </button>
-          </div>
-          <div class="card-footer bg-transparent border-0 text-secondary small">
-            Publicado el 05 de Enero, 2026
-          </div>
-        </div>
-      </article>
-    </section>
-
-    <div class="modal fade" id="modalBlog1" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content border-0 shadow-lg">
-          <div class="modal-header navbar-green text-white">
-            <h5 class="modal-title fw-bold">5 Pasos para iniciar tu primer huerto urbano</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body text-dark">
-            <p class="lead text-secondary">Tener un huerto en casa es más sencillo de lo que parece y no requiere de grandes hectáreas de tierra.</p>
-            <h6 class="fw-bold text-emerald mt-3">1. Ubicación y Luz Solar</h6>
-            <p class="text-secondary">Busca un espacio en tu balcón, ventana o patio que reciba entre 4 y 6 horas diarias de luz solar directa.</p>
-            <h6 class="fw-bold text-emerald mt-3">2. Elección de Recipientes</h6>
-            <p class="text-secondary">Asegúrate de que las macetas o jardineras tengan agujeros en la base para un drenaje óptimo.</p>
-            <h6 class="fw-bold text-emerald mt-3">3. Substrato Nutritivo</h6>
-            <p class="text-secondary">Utiliza una mezcla balanceada con 60% de fibra de coco y 40% de humus de lombriz para retener humedad y aportar nutrientes.</p>
-            <h6 class="fw-bold text-emerald mt-3">4. ¿Qué sembrar al inicio?</h6>
-            <p class="text-secondary">Opta por cultivos de rápido crecimiento como lechugas, rábanos, espinacas y hierbas aromáticas (menta, ciboulette, albahaca).</p>
-            <h6 class="fw-bold text-emerald mt-3">5. Rutina de Riego</h6>
-            <p class="text-secondary">Riega preferentemente al amanecer o al atardecer para evitar la evaporación rápida del agua.</p>
-          </div>
-          <div class="modal-footer border-0">
-            <button type="button" class="btn btn-secondary fw-bold" data-bs-dismiss="modal">Cerrar</button>
+            <span class="badge bg-success mb-2 w-fit">Nutrición</span>
+            <h5 class="card-title fw-bold">Beneficios de los Productos Orgánicos</h5>
+            <p class="card-text text-secondary flex-grow-1">Conoce cómo el consumo de alimentos cultivados sin pesticidas ni químicos beneficia a tu salud y al medio ambiente.</p>
+            <div class="pt-3 border-top d-flex align-items-center justify-content-between">
+              <span class="small text-muted">25 Sep 2026</span>
+              <button class="btn btn-sm btn-outline-success" data-bs-toggle="modal" data-bs-target="#modalBlog1">Leer más &raquo;</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="modal fade" id="modalBlog2" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content border-0 shadow-lg">
-          <div class="modal-header navbar-green text-white">
-            <h5 class="modal-title fw-bold">Compostaje doméstico: Transforma tus residuos</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body text-dark">
-            <p class="lead text-secondary">Casi el 50% de los residuos que generamos en el hogar son orgánicos y se pueden convertir en abono natural.</p>
-            <h6 class="fw-bold text-emerald mt-3">Materiales Verdes (Ricos en Nitrógeno)</h6>
-            <p class="text-secondary">Restos de frutas, verduras, posos de café y cáscaras de huevo.</p>
-            <h6 class="fw-bold text-emerald mt-3">Materiales Marrones (Ricos en Carbono)</h6>
-            <p class="text-secondary">Hojas secas, cartón sin tinta troceado, ramas pequeñas y servilletas de papel.</p>
-            <h6 class="fw-bold text-emerald mt-3">Paso a Paso</h6>
-            <p class="text-secondary">Intercala una capa verde y una marrón en tu compostera. Mantén una humedad leve parecida a la de una esponja escurrida y remueve el contenido una vez por semana para oxigenar la mezcla. En 2 a 3 meses obtendrás un compost oscuro con olor a tierra húmeda.</p>
-          </div>
-          <div class="modal-footer border-0">
-            <button type="button" class="btn btn-secondary fw-bold" data-bs-dismiss="modal">Cerrar</button>
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm border-0">
+          <img src="img/blog2.jpg" class="card-img-top blog-card-img" alt="Cómo crear tu propio huerto" onerror="this.src='img/logo.png'">
+          <div class="card-body d-flex flex-column">
+            <span class="badge bg-success mb-2 w-fit">Guías</span>
+            <h5 class="card-title fw-bold">Cómo Crear tu Propio Huerto en Casa</h5>
+            <p class="card-text text-secondary flex-grow-1">Una guía sencilla con los primeros pasos y consejos prácticos para comenzar a cultivar tus propias hortalizas en el hogar.</p>
+            <div class="pt-3 border-top d-flex align-items-center justify-content-between">
+              <span class="small text-muted">20 Sep 2026</span>
+              <button class="btn btn-sm btn-outline-success" data-bs-toggle="modal" data-bs-target="#modalBlog2">Leer más &raquo;</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="modal fade" id="modalBlog3" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content border-0 shadow-lg">
-          <div class="modal-header navbar-green text-white">
-            <h5 class="modal-title fw-bold">Riego eficiente y control de plagas orgánico</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body text-dark">
-            <p class="lead text-secondary">Mantén tus hortalizas sanas sin necesidad de recurrir a pesticidas o químicos dañinos.</p>
-            <h6 class="fw-bold text-emerald mt-3">Optimización del Riego</h6>
-            <p class="text-secondary">Comprueba la humedad hundiendo un dedo un par de centímetros en la tierra. Si sale seco, es momento de regar. Evita mojar las hojas para prevenir la aparición de hongos como el oídio.</p>
-            <h6 class="fw-bold text-emerald mt-3">Insecticidas Ecológicos Caseros</h6>
-            <ul class="text-secondary">
-              <li><strong>Jabón Potásico o Neutro:</strong> Diluye una cucharada en un litro de agua para eliminar pulgones y cochinillas.</li>
-              <li><strong>Infusión de Ajo:</strong> Hierve 5 dientes de ajo machacados en agua y pulveriza para ahuyentar insectos depredadores.</li>
-            </ul>
-          </div>
-          <div class="modal-footer border-0">
-            <button type="button" class="btn btn-secondary fw-bold" data-bs-dismiss="modal">Cerrar</button>
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm border-0">
+          <img src="img/blog3.jpg" class="card-img-top blog-card-img" alt="Recetas saludables con frutas" onerror="this.src='img/logo.png'">
+          <div class="card-body d-flex flex-column">
+            <span class="badge bg-success mb-2 w-fit">Sostenibilidad</span>
+            <h5 class="card-title fw-bold">Recetas Saludables con Frutas de Estación</h5>
+            <p class="card-text text-secondary flex-grow-1">Aprovecha el máximo sabor y nutrientes preparando estas deliciosas y sencillas opciones nutritivas para tu día.</p>
+            <div class="pt-3 border-top d-flex align-items-center justify-content-between">
+              <span class="small text-muted">15 Sep 2026</span>
+              <button class="btn btn-sm btn-outline-success" data-bs-toggle="modal" data-bs-target="#modalBlog3">Leer más &raquo;</button>
+            </div>
           </div>
         </div>
       </div>
+
     </div>
   </main>
 
-  <footer class="bg-dark text-white py-4 mt-5">
-    <div class="container text-center">
-      <p class="mb-1">🌱 <strong>HuertoHogar</strong> - Productos agrícolas directo a tu mesa</p>
-      <small>&copy; 2026 Todos los derechos reservados.</small>
+  <div class="modal fade" id="modalBlog1" tabindex="-1" aria-labelledby="modalBlog1Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-success text-white">
+          <h5 class="modal-title fw-bold" id="modalBlog1Label">Beneficios de los Productos Orgánicos</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body p-4">
+          <img src="img/blog1.jpg" class="img-fluid rounded mb-4 w-100 blog-modal-img" alt="Productos orgánicos" onerror="this.src='img/logo.png'">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <span class="badge bg-success">Nutrición</span>
+            <small class="text-muted">Publicado el 25 de Septiembre, 2026 por Equipo HuertoHogar</small>
+          </div>
+          <p class="lead text-secondary">El consumo de alimentos orgánicos ha pasado de ser una tendencia a convertirse en una decisión clave para cuidar la salud de nuestras familias.</p>
+          <hr>
+          <p>Los productos cultivados de manera orgánica se producen sin el uso de pesticidas sintéticos, herbicidas químicos ni fertilizantes artificiales. Esto garantiza que lo que llega a tu mesa conserve su sabor real, su textura natural y el 100% de sus nutrientes.</p>
+          <h6 class="fw-bold mt-4 mb-2">Principales ventajas:</h6>
+          <ul>
+            <li><strong>Mayor aporte de antioxidantes:</strong> Las plantas orgánicas desarrollan mejores defensas naturales al no depender de químicos.</li>
+            <li><strong>Libres de residuos tóxicos:</strong> Evitas la ingesta recurrente de pesticidas perjudiciales para la flora intestinal.</li>
+            <li><strong>Apoyo a los suelos:</strong> Las técnicas orgánicas protegen la microbiología del suelo y evitan la contaminación de napas subterráneas.</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalBlog2" tabindex="-1" aria-labelledby="modalBlog2Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-success text-white">
+          <h5 class="modal-title fw-bold" id="modalBlog2Label">Cómo Crear tu Propio Huerto en Casa</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body p-4">
+          <img src="img/blog2.jpg" class="img-fluid rounded mb-4 w-100 blog-modal-img" alt="Huerto en casa" onerror="this.src='img/logo.png'">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <span class="badge bg-success">Guías</span>
+            <small class="text-muted">Publicado el 20 de Septiembre, 2026 por Equipo HuertoHogar</small>
+          </div>
+          <p class="lead text-secondary">No necesitas disponer de una gran parcela o jardín para cosechar tus propios alimentos frescos todos los días.</p>
+          <hr>
+          <p>Crear un huerto urbano en balcones, terrazas o pequeños patios es una actividad terapéutica, económica y muy gratificante. Con solo un par de macetas y buena luz solar puedes empezar hoy mismo.</p>
+          <h6 class="fw-bold mt-4 mb-2">Pasos básicos para iniciar:</h6>
+          <ol>
+            <li><strong>Elegir la ubicación:</strong> Busca un rincón que reciba al menos 5 a 6 horas de luz solar directa al día.</li>
+            <li><strong>Sustrato rico en nutrientes:</strong> Mezcla compost orgánico con fibra de coco o perlita para asegurar buen drenaje.</li>
+            <li><strong>Primeros cultivos recomendados:</strong> Inicia con lechugas, espinacas, rábano o hierbas aromáticas como albahaca y menta, que crecen rápido.</li>
+            <li><strong>Riego constante:</strong> Mantén la tierra húmeda sin llegar a encharcar las raíces.</li>
+          </ol>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalBlog3" tabindex="-1" aria-labelledby="modalBlog3Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-success text-white">
+          <h5 class="modal-title fw-bold" id="modalBlog3Label">Recetas Saludables con Frutas de Estación</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body p-4">
+          <img src="img/blog3.jpg" class="img-fluid rounded mb-4 w-100 blog-modal-img" alt="Frutas de estación" onerror="this.src='img/logo.png'">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <span class="badge bg-success">Sostenibilidad</span>
+            <small class="text-muted">Publicado el 15 de Septiembre, 2026 por Equipo HuertoHogar</small>
+          </div>
+          <p class="lead text-secondary">Aprovechar las frutas de la temporada no solo beneficia tu bolsillo, sino que asegura el máximo sabor y nivel de nutrientes.</p>
+          <hr>
+          <p>Cuando consumimos frutas de estación respetamos el ciclo natural del cultivo, asegurando productos recolectados en su punto óptimo de maduración sin necesidad de cámaras de maduración artificial.</p>
+          <h6 class="fw-bold mt-4 mb-2">Ideas rápidas de preparación:</h6>
+          <ul>
+            <li><strong>Smoothie revitalizante:</strong> Mezcla manzana verde, espinaca fresca, plátano y agua de coco para un desayuno lleno de energía.</li>
+            <li><strong>Ensalada fresca de estación:</strong> Acompaña tus hojas verdes con gajos de naranja o frutillas, nueces picadas y un chorrito de aceite de oliva.</li>
+            <li><strong>Postre saludable:</strong> Hornea peras o manzanas con canela y un toque ligero de miel pura para disfrutar sin culpa.</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-dark text-white text-center py-4 mt-auto">
+    <div class="container">
+      <p class="mb-1 fw-bold">🌱 HuertoHogar - Productos agrícolas directo a tu mesa</p>
+      <small class="text-white-50">&copy; 2026 Todos los derechos reservados.</small>
     </div>
   </footer>
 
