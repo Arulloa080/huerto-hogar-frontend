@@ -4,18 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HuertoHogar - Nosotros</title>
+  
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="d-flex flex-column min-vh-100">
 
+  
   <nav class="navbar navbar-expand-lg navbar-dark navbar-green shadow-sm">
     <div class="container">
-      <a class="navbar-brand d-flex align-items-center gap-2 brand-text text-white text-decoration-none" 
-         href="index.html" 
-         style="transition: color 0.15s ease-in-out;"
-         onmousedown="this.style.setProperty('color', '#dc3545', 'important')" 
-         onmouseup="this.style.setProperty('color', '#ffffff', 'important')">
+      <a class="navbar-brand d-flex align-items-center gap-2 brand-text text-white text-decoration-none" href="index.html">
         <img src="img/logo.png" alt="Logo HuertoHogar" class="logo-img">
         <span>HuertoHogar</span>
       </a>
@@ -32,7 +38,7 @@
           <li class="nav-item"><a class="nav-link" href="registro.html">Registro</a></li>
           <li class="nav-item"><a class="nav-link text-danger" href="admin-home.html">Panel Admin</a></li>
         </ul>
-        <a href="carrito.html" class="btn btn-yellow position-relative d-flex align-items-center gap-2 font-weight-bold">
+        <a href="carrito.html" class="btn btn-yellow position-relative d-flex align-items-center gap-2 fw-bold">
           <span>🛒 Carrito</span>
           <span id="cart-count-badge" class="badge bg-danger rounded-pill">0</span>
         </a>
@@ -40,11 +46,161 @@
     </div>
   </nav>
 
+  
   <main class="container py-5 flex-grow-1">
-    <section class="text-center mx-auto mb-5" style="max-width: 800px;">
-      <h1 class="fw-bold mb-3">Sobre HuertoHogar</h1>
-      <p class="lead text-secondary">Conectamos a agricultores locales directamente con familias que buscan alimentos frescos, saludables y sostenibles.</p>
+    
+  
+    <section class="text-center mx-auto mb-5 section-banner">
+      <h1 class="display-5 fw-bold text-dark mb-3">Sobre HuertoHogar</h1>
+      <p class="lead text-secondary mb-4">HuertoHogar es una tienda online dedicada a llevar la frescura y calidad de los productos del campo directamente a la puerta de nuestros clientes en Chile.</p>
+      <p class="text-secondary">Con más de 6 años de experiencia, operamos en más de 9 puntos a lo largo del país, incluyendo ciudades clave como Santiago, Puerto Montt, Villarrica, Nacimiento, Viña del Mar, Valparaíso, y Concepción. Nuestra misión es conectar a las familias chilenas con el campo, promoviendo un estilo de vida saludable y sostenible.</p>
     </section>
+
+   
+    <section class="row g-4 mb-5">
+      <div class="col-md-6">
+        <div class="card border-0 shadow-sm p-4 h-100 bg-light">
+          <h3 class="fw-bold text-success mb-3">🌱 Nuestra Misión</h3>
+          <p class="text-secondary mb-0">Nuestra misión es proporcionar productos frescos y de calidad directamente desde el campo hasta la puerta de nuestros clientes, garantizando la frescura y el sabor en cada entrega. Nos comprometemos a fomentar una conexión más cercana entre los consumidores y los agricultores locales, apoyando prácticas agrícolas sostenibles y promoviendo una alimentación saludable en todos los hogares chilenos.</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card border-0 shadow-sm p-4 h-100 bg-light">
+          <h3 class="fw-bold text-success mb-3">🌍 Nuestra Visión</h3>
+          <p class="text-secondary mb-0">Nuestra visión es ser la tienda online líder en la distribución de productos frescos y naturales en Chile, reconocida por nuestra calidad excepcional, servicio al cliente y compromiso con la sostenibilidad. Aspiramos a expandir nuestra presencia a nivel nacional e internacional, estableciendo un nuevo estándar en la distribución de productos agrícolas directos del productor al consumidor.</p>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="bg-light p-4 p-md-5 rounded shadow-sm mb-5">
+      <h3 class="fw-bold text-dark mb-2 text-center">📍 Nuevas Tiendas y Puntos de Distribución</h3>
+      <p class="text-muted text-center mb-4">Ubicaciones confirmadas en Santiago, Puerto Montt, Villarrica, Nacimiento, Viña del Mar, Valparaíso y Concepción.</p>
+      
+      <div class="row g-4 align-items-center">
+       
+        <div class="col-lg-5">
+          <div class="accordion accordion-tiendas" id="accordionTiendas">
+           
+            <div class="accordion-item border-0 shadow-sm mb-2 rounded overflow-hidden">
+              <h2 class="accordion-header" id="headSantiago">
+                <button class="accordion-button fw-bold text-success" type="button" data-bs-toggle="collapse" data-bs-target="#colSantiago" aria-expanded="true">
+                  🏙️ Santiago
+                </button>
+              </h2>
+              <div id="colSantiago" class="accordion-collapse collapse show" data-bs-parent="#accordionTiendas">
+                <div class="accordion-body text-secondary small">
+                  <strong>Zona:</strong> Región Metropolitana<br>
+                  <strong>Servicio:</strong> Tienda Central y Despachos
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item border-0 shadow-sm mb-2 rounded overflow-hidden">
+              <h2 class="accordion-header" id="headPuertoMontt">
+                <button class="accordion-button collapsed fw-bold text-success" type="button" data-bs-toggle="collapse" data-bs-target="#colPuertoMontt">
+                  🚢 Puerto Montt
+                </button>
+              </h2>
+              <div id="colPuertoMontt" class="accordion-collapse collapse" data-bs-parent="#accordionTiendas">
+                <div class="accordion-body text-secondary small">
+                  <strong>Zona:</strong> Región de Los Lagos<br>
+                  <strong>Servicio:</strong> Punto de Distribución Sur
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item border-0 shadow-sm mb-2 rounded overflow-hidden">
+              <h2 class="accordion-header" id="headVillarrica">
+                <button class="accordion-button collapsed fw-bold text-success" type="button" data-bs-toggle="collapse" data-bs-target="#colVillarrica">
+                  🌋 Villarrica
+                </button>
+              </h2>
+              <div id="colVillarrica" class="accordion-collapse collapse" data-bs-parent="#accordionTiendas">
+                <div class="accordion-body text-secondary small">
+                  <strong>Zona:</strong> Región de La Araucanía<br>
+                  <strong>Servicio:</strong> Tienda y Retiro Regional
+                </div>
+              </div>
+            </div>
+
+          
+            <div class="accordion-item border-0 shadow-sm mb-2 rounded overflow-hidden">
+              <h2 class="accordion-header" id="headNacimiento">
+                <button class="accordion-button collapsed fw-bold text-success" type="button" data-bs-toggle="collapse" data-bs-target="#colNacimiento">
+                  🌾 Nacimiento
+                </button>
+              </h2>
+              <div id="colNacimiento" class="accordion-collapse collapse" data-bs-parent="#accordionTiendas">
+                <div class="accordion-body text-secondary small">
+                  <strong>Zona:</strong> Región del Bío Bío<br>
+                  <strong>Servicio:</strong> Centro Agrícola Local
+                </div>
+              </div>
+            </div>
+
+           
+            <div class="accordion-item border-0 shadow-sm mb-2 rounded overflow-hidden">
+              <h2 class="accordion-header" id="headVina">
+                <button class="accordion-button collapsed fw-bold text-success" type="button" data-bs-toggle="collapse" data-bs-target="#colVina">
+                  🌊 Viña del Mar
+                </button>
+              </h2>
+              <div id="colVina" class="accordion-collapse collapse" data-bs-parent="#accordionTiendas">
+                <div class="accordion-body text-secondary small">
+                  <strong>Zona:</strong> Región de Valparaíso<br>
+                  <strong>Servicio:</strong> Tienda y Despacho Costa
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item border-0 shadow-sm mb-2 rounded overflow-hidden">
+              <h2 class="accordion-header" id="headValparaiso">
+                <button class="accordion-button collapsed fw-bold text-success" type="button" data-bs-toggle="collapse" data-bs-target="#colValparaiso">
+                  ⚓ Valparaíso
+                </button>
+              </h2>
+              <div id="colValparaiso" class="accordion-collapse collapse" data-bs-parent="#accordionTiendas">
+                <div class="accordion-body text-secondary small">
+                  <strong>Zona:</strong> Región de Valparaíso<br>
+                  <strong>Servicio:</strong> Punto de Retiro Directo
+                </div>
+              </div>
+            </div>
+
+           
+            <div class="accordion-item border-0 shadow-sm rounded overflow-hidden">
+              <h2 class="accordion-header" id="headConcepcion">
+                <button class="accordion-button collapsed fw-bold text-success" type="button" data-bs-toggle="collapse" data-bs-target="#colConcepcion">
+                  🌲 Concepción
+                </button>
+              </h2>
+              <div id="colConcepcion" class="accordion-collapse collapse" data-bs-parent="#accordionTiendas">
+                <div class="accordion-body text-secondary small">
+                  <strong>Zona:</strong> Región del Bío Bío<br>
+                  <strong>Servicio:</strong> Centro de Distribución
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      
+        <div class="col-lg-7">
+          <div class="ratio ratio-16x9 rounded overflow-hidden shadow-sm border">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3326123.5188042457!2d-73.5000000!3d-36.5000000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sChile%20Santiago%20Valparaiso%20Concepcion%20Puerto%20Montt!5e0!3m2!1ses!2scl!4v1700000000000!5m2!1ses!2scl" 
+              class="map-iframe"
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="bg-dark text-white text-center py-4 mt-auto">
