@@ -9,6 +9,7 @@
 </head>
 <body class="d-flex flex-column min-vh-100">
 
+  <!-- Navegación -->
   <nav class="navbar navbar-expand-lg navbar-dark navbar-green shadow-sm">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center gap-2 brand-text text-white text-decoration-none" 
@@ -40,13 +41,163 @@
     </div>
   </nav>
 
+  <!-- Contenido Principal -->
   <main class="container py-5 flex-grow-1">
-    <h1 class="text-center fw-bold mb-4">Blog & Consejos Agrícolas</h1>
+    <section class="text-center mx-auto mb-5">
+      <h1 class="display-5 fw-bold text-dark mb-3">Blog de Noticias y Consejos</h1>
+      <p class="lead text-secondary">Descubre nuestras últimas publicaciones sobre agricultura sostenible, recetas y vida saludable.</p>
+    </section>
+
     <div class="row g-4" id="blogs-container">
-      <!-- Artículos de blog -->
+      
+      <!-- Entrada 1 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm border-0">
+          <img src="img/blog1.jpg" class="card-img-top" alt="Beneficios de los productos orgánicos" style="height: 200px; object-fit: cover;" onerror="this.src='img/logo.png'">
+          <div class="card-body d-flex flex-column">
+            <span class="badge bg-success mb-2 w-fit">Nutrición</span>
+            <h5 class="card-title fw-bold">Beneficios de los Productos Orgánicos</h5>
+            <p class="card-text text-secondary flex-grow-1">Conoce cómo el consumo de alimentos cultivados sin pesticidas ni químicos beneficia a tu salud y al medio ambiente.</p>
+            <div class="pt-3 border-top d-flex align-items-center justify-content-between">
+              <span class="small text-muted">25 Sep 2026</span>
+              <button class="btn btn-sm btn-outline-success" data-bs-toggle="modal" data-bs-target="#modalBlog1">Leer más &raquo;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Entrada 2 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm border-0">
+          <img src="img/blog2.jpg" class="card-img-top" alt="Cómo crear tu propio huerto" style="height: 200px; object-fit: cover;" onerror="this.src='img/logo.png'">
+          <div class="card-body d-flex flex-column">
+            <span class="badge bg-success mb-2 w-fit">Guías</span>
+            <h5 class="card-title fw-bold">Cómo Crear tu Propio Huerto en Casa</h5>
+            <p class="card-text text-secondary flex-grow-1">Una guía sencilla con los primeros pasos y consejos prácticos para comenzar a cultivar tus propias hortalizas en el hogar.</p>
+            <div class="pt-3 border-top d-flex align-items-center justify-content-between">
+              <span class="small text-muted">20 Sep 2026</span>
+              <button class="btn btn-sm btn-outline-success" data-bs-toggle="modal" data-bs-target="#modalBlog2">Leer más &raquo;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Entrada 3 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm border-0">
+          <img src="img/blog3.jpg" class="card-img-top" alt="Recetas saludables con frutas" style="height: 200px; object-fit: cover;" onerror="this.src='img/logo.png'">
+          <div class="card-body d-flex flex-column">
+            <span class="badge bg-success mb-2 w-fit">Sostenibilidad</span>
+            <h5 class="card-title fw-bold">Recetas Saludables con Frutas de Estación</h5>
+            <p class="card-text text-secondary flex-grow-1">Aprovecha el máximo sabor y nutrientes preparando estas deliciosas y sencillas opciones nutritivas para tu día.</p>
+            <div class="pt-3 border-top d-flex align-items-center justify-content-between">
+              <span class="small text-muted">15 Sep 2026</span>
+              <button class="btn btn-sm btn-outline-success" data-bs-toggle="modal" data-bs-target="#modalBlog3">Leer más &raquo;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </main>
 
+  <!-- ==================== MODALES CON INFORMACIÓN COMPLETA ==================== -->
+
+  <!-- Modal Blog 1 -->
+  <div class="modal fade" id="modalBlog1" tabindex="-1" aria-labelledby="modalBlog1Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-success text-white">
+          <h5 class="modal-title fw-bold" id="modalBlog1Label">Beneficios de los Productos Orgánicos</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body p-4">
+          <img src="img/blog1.jpg" class="img-fluid rounded mb-4 w-100" alt="Productos orgánicos" style="max-height: 350px; object-fit: cover;" onerror="this.src='img/logo.png'">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <span class="badge bg-success">Nutrición</span>
+            <small class="text-muted">Publicado el 25 de Septiembre, 2026 por Equipo HuertoHogar</small>
+          </div>
+          <p class="lead text-secondary">El consumo de alimentos orgánicos ha pasado de ser una tendencia a convertirse en una decisión clave para cuidar la salud de nuestras familias.</p>
+          <hr>
+          <p>Los productos cultivados de manera orgánica se producen sin el uso de pesticidas sintéticos, herbicidas químicos ni fertilizantes artificiales. Esto garantiza que lo que llega a tu mesa conserve su sabor real, su textura natural y el 100% de sus nutrientes.</p>
+          <h6 class="fw-bold mt-4 mb-2">Principales ventajas:</h6>
+          <ul>
+            <li><strong>Mayor aporte de antioxidantes:</strong> Las plantas orgánicas desarrollan mejores defensas naturales al no depender de químicos.</li>
+            <li><strong>Libres de residuos tóxicos:</strong> Evitas la ingesta recurrente de pesticidas perjudiciales para la flora intestinal.</li>
+            <li><strong>Apoyo a los suelos:</strong> Las técnicas orgánicas protegen la microbiología del suelo y evitan la contaminación de napas subterráneas.</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Blog 2 -->
+  <div class="modal fade" id="modalBlog2" tabindex="-1" aria-labelledby="modalBlog2Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-success text-white">
+          <h5 class="modal-title fw-bold" id="modalBlog2Label">Cómo Crear tu Propio Huerto en Casa</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body p-4">
+          <img src="img/blog2.jpg" class="img-fluid rounded mb-4 w-100" alt="Huerto en casa" style="max-height: 350px; object-fit: cover;" onerror="this.src='img/logo.png'">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <span class="badge bg-success">Guías</span>
+            <small class="text-muted">Publicado el 20 de Septiembre, 2026 por Equipo HuertoHogar</small>
+          </div>
+          <p class="lead text-secondary">No necesitas disponer de una gran parcela o jardín para cosechar tus propios alimentos frescos todos los días.</p>
+          <hr>
+          <p>Crear un huerto urbano en balcones, terrazas o pequeños patios es una actividad terapéutica, económica y altamente gratificante. Con solo un par de macetas y buena luz solar puedes empezar hoy mismo.</p>
+          <h6 class="fw-bold mt-4 mb-2">Pasos básicos para iniciar:</h6>
+          <ol>
+            <li><strong>Elegir la ubicación:</strong> Busca un rincón que reciba al menos 5 a 6 horas de luz solar directa al día.</li>
+            <li><strong>Sustrato rico en nutrientes:</strong> Mezcla compost orgánico con fibra de coco o perlita para asegurar buen drenaje.</li>
+            <li><strong>Primeros cultivos recomendados:</strong> Inicia con lechugas, espinacas, rábano o hierbas aromáticas como albahaca y menta, que crecen rápido.</li>
+            <li><strong>Riego constante:</strong> Mantén la tierra húmeda sin llegar a encharcar las raíces.</li>
+          </ol>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Blog 3 -->
+  <div class="modal fade" id="modalBlog3" tabindex="-1" aria-labelledby="modalBlog3Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-success text-white">
+          <h5 class="modal-title fw-bold" id="modalBlog3Label">Recetas Saludables con Frutas de Estación</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body p-4">
+          <img src="img/blog3.jpg" class="img-fluid rounded mb-4 w-100" alt="Frutas de estación" style="max-height: 350px; object-fit: cover;" onerror="this.src='img/logo.png'">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <span class="badge bg-success">Sostenibilidad</span>
+            <small class="text-muted">Publicado el 15 de Septiembre, 2026 por Equipo HuertoHogar</small>
+          </div>
+          <p class="lead text-secondary">Aprovechar las frutas de la temporada no solo beneficia tu bolsillo, sino que asegura el máximo sabor y nivel de nutrientes.</p>
+          <hr>
+          <p>Cuando consumimos frutas de estación respetamos el ciclo natural del cultivo, asegurando productos recolectados en su punto óptimo de maduración sin necesidad de cámaras de maduración artificial.</p>
+          <h6 class="fw-bold mt-4 mb-2">Ideas rápidas de preparación:</h6>
+          <ul>
+            <li><strong>Smoothie revitalizante:</strong> Mezcla manzana verde, espinaca fresca, plátano y agua de coco para un desayuno lleno de energía.</li>
+            <li><strong>Ensalada fresca de estación:</strong> Acompaña tus hojas verdes con gajos de naranja o frutillas, nueces picadas y un chorrito de aceite de oliva.</li>
+            <li><strong>Postre saludable:</strong> Hornea peras o manzanas con canela y un toque ligero de miel pura para disfrutar sin culpa.</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
   <footer class="bg-dark text-white text-center py-4 mt-auto">
     <div class="container">
       <p class="mb-1 fw-bold">🌱 HuertoHogar - Productos agrícolas directo a tu mesa</p>
