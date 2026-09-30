@@ -7,11 +7,15 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
 
   <nav class="navbar navbar-expand-lg navbar-dark navbar-green shadow-sm">
     <div class="container">
-      <a class="navbar-brand d-flex align-items-center gap-2 brand-text" href="index.html">
+      <a class="navbar-brand d-flex align-items-center gap-2 brand-text text-white text-decoration-none" 
+         href="index.html" 
+         style="transition: color 0.15s ease-in-out;"
+         onmousedown="this.style.setProperty('color', '#dc3545', 'important')" 
+         onmouseup="this.style.setProperty('color', '#ffffff', 'important')">
         <img src="img/logo.png" alt="Logo HuertoHogar" class="logo-img">
         <span>HuertoHogar</span>
       </a>
@@ -24,8 +28,8 @@
           <li class="nav-item"><a class="nav-link" href="carrito.html">Tienda / Carrito</a></li>
           <li class="nav-item"><a class="nav-link" href="blogs.html">Blogs</a></li>
           <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
-          <li class="nav-item"><a class="nav-link fw-bold text-success" href="login.html">Iniciar Sesión</a></li>
-          <li class="nav-item"><a class="nav-link fw-bold text-success" href="registro.html">Registro</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.html">Iniciar Sesión</a></li>
+          <li class="nav-item"><a class="nav-link" href="registro.html">Registro</a></li>
           <li class="nav-item"><a class="nav-link text-danger" href="admin-home.html">Panel Admin</a></li>
         </ul>
         <!-- Acceso directo al Carrito en Navbar -->
@@ -37,9 +41,9 @@
     </div>
   </nav>
 
-  <main class="container py-5">
-    <section class="text-center mx-auto max-w-750 mb-5">
-      <h1 class="display-4 fw-bold text-dark mb-3">Sabor y frescura <span class="text-emerald">de origen local</span></h1>
+  <main class="container py-5 flex-grow-1">
+    <section class="text-center mx-auto mb-5">
+      <h1 class="display-4 fw-bold text-dark mb-3">Sabor y frescura <span class="text-success">de origen local</span></h1>
       <p class="lead text-secondary mb-4">Productos orgánicos del campo directamente a la puerta de tu hogar.</p>
     </section>
 
@@ -68,6 +72,14 @@
       </div>
     </div>
   </div>
+
+  <!-- Pie de página unificado -->
+  <footer class="bg-dark text-white text-center py-4 mt-auto">
+    <div class="container">
+      <p class="mb-1 fw-bold">🌱 HuertoHogar - Productos agrícolas directo a tu mesa</p>
+      <small class="text-white-50">&copy; 2026 Todos los derechos reservados.</small>
+    </div>
+  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/cart-badge.js"></script>
