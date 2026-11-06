@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HuertoHogar - Carrito de Compras</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-green shadow-sm">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2 brand-text text-white text-decoration-none" 
+         href="index.html" 
+         style="transition: color 0.15s ease-in-out;"
+         onmousedown="this.style.setProperty('color', '#dc3545', 'important')" 
+         onmouseup="this.style.setProperty('color', '#ffffff', 'important')">
+        <img src="img/logo.png" alt="Logo HuertoHogar" class="logo-img">
+        <span>HuertoHogar</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link active" href="carrito.html">Tienda / Carrito</a></li>
+          <li class="nav-item"><a class="nav-link" href="blogs.html">Blogs</a></li>
+          <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.html">Iniciar Sesión</a></li>
+          <li class="nav-item"><a class="nav-link" href="registro.html">Registro</a></li>
+          <li class="nav-item"><a class="nav-link text-danger" href="admin-home.html">Panel Admin</a></li>
+        </ul>
+        <a href="carrito.html" class="btn btn-yellow position-relative d-flex align-items-center gap-2 font-weight-bold">
+          <span>🛒 Carrito</span>
+          <span id="cart-count-badge" class="badge bg-danger rounded-pill">0</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container py-5 flex-grow-1">
+    <h2 class="fw-bold mb-4">Tu Carrito de Compras</h2>
+    <div class="row g-4">
+      <div class="col-lg-8" id="cart-items-container">
+        <!-- Contenido dinámico del carrito -->
+      </div>
+      <div class="col-lg-4">
+        <div class="card shadow-sm p-4">
+          <h4 class="fw-bold mb-3">Resumen de Compra</h4>
+          <div class="d-flex justify-content-between mb-2">
+            <span>Subtotal:</span>
+            <span id="cart-subtotal">$0</span>
+          </div>
+          <hr>
+          <div class="d-flex justify-content-between fw-bold fs-5 mb-4">
+            <span>Total:</span>
+            <span id="cart-total">$0</span>
+          </div>
+          <button class="btn btn-success w-100 py-2 fw-bold" id="checkout-btn">Proceder al Pago</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-dark text-white text-center py-4 mt-auto">
+    <div class="container">
+      <p class="mb-1 fw-bold">🌱 HuertoHogar - Productos agrícolas directo a tu mesa</p>
+      <small class="text-white-50">&copy; 2026 Todos los derechos reservados.</small>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/cart-badge.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+</html>
